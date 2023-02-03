@@ -4,5 +4,32 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/_preload.unity
+    guid: 3985a50aab4e7b548b8e1daae948c387
+  - enabled: 1
+    path: Assets/Scenes/CutsceneFinal.unity
+    guid: 8d4d54496f206e74b91d175a51ae0d23
+  - enabled: 1
+    path: Assets/Scenes/CutsceneInicial.unity
+    guid: 261196a6fadf2e1478e972fb49a7bd3a
+  - enabled: 1
+    path: Assets/Scenes/Floresta.unity
+    guid: a822133b57a1b4541bd75614e3b0ce57
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 86d00f27d04be3444a0ef71b05389e9c
+  - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: 50123349f0c926d43957db45f126f0ed
+  - enabled: 1
+    path: Assets/Scenes/Ritual.unity
+    guid: f5a11c1b2bce392438a168ed9f4578aa
+  - enabled: 1
+    path: Assets/Scenes/TelaInicial.unity
+    guid: 617c3dd5ba18090429d19ffe98b522f0
+  - enabled: 0
+    path: Assets/Scenes/CenaTeste.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
