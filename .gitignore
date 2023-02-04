@@ -20,6 +20,8 @@ Ignore Blender backups
 
 *.blend1
 
+*.meta
+
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
