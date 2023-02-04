@@ -67,7 +67,7 @@ public class MouseOperations {
 
     public static void SetPosicaoCursorMultiPlat() {
     #if UNITY_EDITOR || UNITY_STANDALONE_WIN
-            Debug.Log("clicou mouse");
+            //Debug.Log("clicou mouse");
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown | MouseOperations.MouseEventFlags.LeftUp);
     #endif
     }

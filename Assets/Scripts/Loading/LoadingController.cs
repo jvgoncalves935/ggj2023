@@ -8,10 +8,12 @@ public class LoadingController : MonoBehaviour
     private bool primeiroUpdate;
     private AsyncOperation operacao;
     [SerializeField] private Image imagemEH;
+    [SerializeField] private SceneLoader sceneLoader;
 
     void Start()
     {
         primeiroUpdate = true;
+        VerificarSceneLoaderInstanciado();
     }
 
     private void Update() {
@@ -40,10 +42,11 @@ public class LoadingController : MonoBehaviour
     }
 
     private void PosLoading(){
-        Debug.Log("pos loading");
+        //Debug.Log("pos loading");
+        //Debug.Log(SceneLoader.InstanciaSceneLoader.GetProximaCena());
         AudioManager.InstanciaAudioManager.IniciarSonsCenaAtual();
         SceneLoader.InstanciaSceneLoader.SetProximaCena("");
-        Debug.Log("acabou");
+        //Debug.Log("acabou");
     }
 
     private void LogoPulsando(){
@@ -56,5 +59,15 @@ public class LoadingController : MonoBehaviour
     #if UNITY_EDITOR || UNITY_STANDALONE_WIN
         MouseOperations.FocarMouseMultiPlat();
     #endif
+    }
+
+    public void VerificarSceneLoaderInstanciado() {
+        if(FindObjectOfType<SceneLoader>() == null) {
+            Instantiate(sceneLoader);
+            DontDestroyOnLoad(sceneLoader);
+            //Debug.Log("SceneData criado em EventHorizon");
+        } else {
+            //Debug.Log("SceneData anteriormente criado");
+        }
     }
 }
