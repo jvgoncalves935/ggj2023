@@ -20,8 +20,18 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
+		public AudioSource audioSource;
+		private bool isWalking = false;
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-		public void OnMove(InputValue value)
+
+        public void Start() {
+			audioSource = GetComponent<AudioSource>();
+        }
+        public void Update() {
+			GetPassos();
+        }
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}
@@ -75,6 +85,32 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
+
+		private void GetPassos() {
+            if(isWalking) {
+				if(move.x == 0 && move.y == 0) {
+					isWalking = false;
+					audioSource.Stop();
+				} else {
+					if(move.x != 0 || move.y != 0) {
+						isWalking = true;
+
+					}
+				}
+
+			}else {
+				if(move.x == 0 && move.y == 0) {
+					isWalking = false;
+					
+				} else {
+					if(move.x != 0 || move.y != 0) {
+						isWalking = true;
+						audioSource.Play();
+
+					}
+				}
+			}
+        }
 	}
 	
 }
