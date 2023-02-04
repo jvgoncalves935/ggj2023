@@ -36,6 +36,8 @@ public class TelaInicialController : MonoBehaviour{
         StartCoroutine(FadeOut(imagemOuroboros,0.8f));
         yield return new WaitForSeconds(0.8f);
 
+        yield return new WaitForSeconds(1.0f);
+
         StartCoroutine(FadeIn(imagemForceDev, 0.8f));
         yield return new WaitForSeconds(0.8f);
 
