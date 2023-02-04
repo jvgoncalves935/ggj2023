@@ -6,6 +6,20 @@ public class FlorestaController : MonoBehaviour
 {
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
+
+    [SerializeField] public static GameObject instanciaFlorestaController;
+    private static FlorestaController _instanciaFlorestaController;
+    public static FlorestaController InstanciaFlorestaController {
+        get {
+            if(_instanciaFlorestaController == null) {
+                _instanciaFlorestaController = instanciaFlorestaController.GetComponent<FlorestaController>();
+            }
+            return _instanciaFlorestaController;
+        }
+    }
+    void Awake() {
+        instanciaFlorestaController = FindObjectOfType<FlorestaController>().gameObject;
+    }
     // Start is called before the first frame update
     void Start()
     {

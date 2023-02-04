@@ -6,6 +6,20 @@ public class CutsceneFinalController : MonoBehaviour
 {
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
+
+    [SerializeField] public static GameObject instanciaCutsceneFinalController;
+    private static CutsceneFinalController _instanciaCutsceneFinalController;
+    public static CutsceneFinalController InstanciaCutsceneFinalController {
+        get {
+            if(_instanciaCutsceneFinalController == null) {
+                _instanciaCutsceneFinalController = instanciaCutsceneFinalController.GetComponent<CutsceneFinalController>();
+            }
+            return _instanciaCutsceneFinalController;
+        }
+    }
+    void Awake() {
+        instanciaCutsceneFinalController = FindObjectOfType<CutsceneFinalController>().gameObject;
+    }
     // Start is called before the first frame update
     void Start()
     {
