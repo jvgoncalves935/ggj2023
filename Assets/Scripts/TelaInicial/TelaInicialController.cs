@@ -160,4 +160,5 @@ public class TelaInicialController : MonoBehaviour{
     public void MusicaInicio() {
         AudioManager.InstanciaAudioManager.Play("R.E.");
     }
+
 }
