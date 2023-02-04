@@ -46,6 +46,8 @@ ExportedObj/
 
 *.sln
 
+*.sfk
+
 *.suo
 
 *.tmp
