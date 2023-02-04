@@ -7,6 +7,7 @@ public class RitualController : MonoBehaviour
 {
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private ScenesData scenesData;
     [SerializeField] private ItemColetável[] itensColetaveisObj;
     [SerializeField] private ItemColetado[] itensColetadosObj;
     [SerializeField] private bool[] itensColetaveis;
@@ -52,6 +53,7 @@ public class RitualController : MonoBehaviour
         if(FindObjectOfType<SceneLoader>() == null) {
             Instantiate(sceneLoader);
             Instantiate(audioManager);
+            Instantiate(scenesData);
             //DontDestroyOnLoad(sceneLoader);
             //Debug.Log("SceneData criado em EventHorizon");
         } else {

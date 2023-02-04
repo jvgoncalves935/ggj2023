@@ -6,6 +6,7 @@ public class FlorestaController : MonoBehaviour
 {
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private ScenesData scenesData;
 
     [SerializeField] public static GameObject instanciaFlorestaController;
     private static FlorestaController _instanciaFlorestaController;
@@ -37,6 +38,7 @@ public class FlorestaController : MonoBehaviour
         if(FindObjectOfType<SceneLoader>() == null) {
             Instantiate(sceneLoader);
             Instantiate(audioManager);
+            Instantiate(scenesData);
             //DontDestroyOnLoad(sceneLoader);
             //Debug.Log("SceneData criado em EventHorizon");
         } else {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.236
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00063455134, g: 0.0006402621, b: 0.0006646756, a: 0.236}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1565,6 +1565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneLoader: {fileID: 4151728016533399908, guid: a645c4c2c9835e7409d67498b5a0d261, type: 3}
   audioManager: {fileID: 9060284651338929096, guid: 9670f3ff600c54341a3cf8ccf73f3a48, type: 3}
+  scenesData: {fileID: 6490474329335419078, guid: d93a78270c80b84438ac873a1f1d3ba5, type: 3}
   itensColetaveisObj:
   - {fileID: 1798694546}
   - {fileID: 568624600}
