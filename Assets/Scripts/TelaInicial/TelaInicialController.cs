@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class TelaInicialController : MonoBehaviour{
     [SerializeField] private Image imagemOuroboros;
     [SerializeField] private Image imagemForceDev;
+    [SerializeField] private Image imagemCMS;
     [SerializeField] private ScenesData scenesData;
     [SerializeField] private InputNames inputNames;
     [SerializeField] private SceneLoader sceneLoader;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private Text textTelaInicial;
     public Dictionary<string, string> stringsTelaInicial;
     private string mensagem;
@@ -17,36 +19,40 @@ public class TelaInicialController : MonoBehaviour{
     private int tamanhoBufferMensagem;
 
     private void Awake() {
-        VerificarScenesDataInstanciado();
+        
     }
 
     void Start()
     {
+        VerificarScenesDataInstanciado();
         FocarMouse();
         VerificarVideoPreload();
+        MusicaInicio();
     }
 
     private IEnumerator IniciarCutscene(){
         
         StartCoroutine(FadeIn(imagemOuroboros,0.8f));
         yield return new WaitForSeconds(0.8f);
-
         yield return new WaitForSeconds(1.0f);
-
         StartCoroutine(FadeOut(imagemOuroboros,0.8f));
         yield return new WaitForSeconds(0.8f);
-
         yield return new WaitForSeconds(1.0f);
+
 
         StartCoroutine(FadeIn(imagemForceDev, 0.8f));
         yield return new WaitForSeconds(0.8f);
-
         yield return new WaitForSeconds(1.0f);
-
         StartCoroutine(FadeOut(imagemForceDev, 0.8f));
         yield return new WaitForSeconds(0.8f);
-
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
+        
+        StartCoroutine(FadeIn(imagemCMS, 0.8f));
+        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.0f);
+        StartCoroutine(FadeOut(imagemCMS, 0.8f));
+        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.0f);
 
         SceneLoader.InstanciaSceneLoader.SetProximaCena("MenuPrincipal");
         GerenciadorCena.CarregarCena("Loading");
@@ -80,6 +86,8 @@ public class TelaInicialController : MonoBehaviour{
 
             Instantiate(sceneLoader);
             sceneLoader = SceneLoader.InstanciaSceneLoader;
+
+            Instantiate(audioManager);
             Debug.Log("SceneData criado em TelaInicial");
         } else {
             Debug.Log("SceneData anteriormente criado");
@@ -137,4 +145,19 @@ public class TelaInicialController : MonoBehaviour{
         Application.Quit();
     }
     #endif
+
+    public void VerificarSceneLoaderInstanciado() {
+        if(FindObjectOfType<SceneLoader>() == null) {
+            Instantiate(sceneLoader);
+            Instantiate(audioManager);
+            //DontDestroyOnLoad(sceneLoader);
+            //Debug.Log("SceneData criado em EventHorizon");
+        } else {
+            //Debug.Log("SceneData anteriormente criado");
+        }
+    }
+
+    public void MusicaInicio() {
+        AudioManager.InstanciaAudioManager.Play("R.E.");
+    }
 }
