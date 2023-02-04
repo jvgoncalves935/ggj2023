@@ -97,6 +97,26 @@ MonoBehaviour:
     loop: 1
     awake: 1
     source: {fileID: 0}
+  - name: R.E. (Full)
+    clip: {fileID: 8300000, guid: cfd465b885713444c890805f06c284f8, type: 3}
+    soundClip: {fileID: 0}
+    musica: 1
+    som: 0
+    volume: 1
+    pitch: 1
+    loop: 1
+    awake: 1
+    source: {fileID: 0}
+  - name: Dori
+    clip: {fileID: 8300000, guid: 819546ffe5276ad49a174e877a6526ba, type: 3}
+    soundClip: {fileID: 0}
+    musica: 1
+    som: 0
+    volume: 1
+    pitch: 1
+    loop: 0
+    awake: 1
+    source: {fileID: 0}
   musicasAudioMixerGroup: {fileID: -5956204415325992436, guid: 30755fad963294643860377d4450b14e, type: 2}
   sonsAudioMixerGroup: {fileID: -4032449555319584236, guid: 30755fad963294643860377d4450b14e, type: 2}
   vozesAudioMixerGroup: {fileID: -4161268270548589489, guid: 30755fad963294643860377d4450b14e, type: 2}

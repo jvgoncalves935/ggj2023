@@ -63,10 +63,10 @@ public class CutsceneFinalController : MonoBehaviour
         }
 
         yield return new WaitForSeconds(3f);
-        IniciarCenaMenuPrincipal();
+        IniciarCenaCreditos();
     }
-    private void IniciarCenaMenuPrincipal() {
-        SceneLoader.InstanciaSceneLoader.SetProximaCena("MenuPrincipal");
+    private void IniciarCenaCreditos() {
+        SceneLoader.InstanciaSceneLoader.SetProximaCena("Creditos");
         GerenciadorCena.CarregarCena("Loading");
     }
 
@@ -115,7 +115,7 @@ public class CutsceneFinalController : MonoBehaviour
 
     private void CheckSkipCutscene() {
         if(Input.GetButtonDown("Escape")) {
-            IniciarCenaMenuPrincipal();
+            IniciarCenaCreditos();
         }
     }
 }

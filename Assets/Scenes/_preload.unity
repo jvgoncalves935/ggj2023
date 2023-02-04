@@ -565,7 +565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMensagem: {fileID: 0}
-  objUI: {fileID: 0}
 --- !u!4 &793002750
 Transform:
   m_ObjectHideFlags: 0

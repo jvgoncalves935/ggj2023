@@ -37,7 +37,7 @@ public class MenuPrincipalController : MonoBehaviour
     }
 
     private void OnButtonCreditosClick() {
-
+        IniciarCenaCreditos();
     }
 
     private void OnButtonSairClick() {
@@ -59,6 +59,11 @@ public class MenuPrincipalController : MonoBehaviour
 
     private void IniciarCenaCutsceneInicial() {
         SceneLoader.InstanciaSceneLoader.SetProximaCena("CutsceneInicial");
+        GerenciadorCena.CarregarCena("Loading");
+    }
+
+    private void IniciarCenaCreditos() {
+        SceneLoader.InstanciaSceneLoader.SetProximaCena("Creditos");
         GerenciadorCena.CarregarCena("Loading");
     }
 

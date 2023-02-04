@@ -12,7 +12,7 @@ public class SaveUIController : MonoBehaviour
     private List<Tuple<string,float>> stringsAtual;
     private SaveData saveData;
     [SerializeField] private Text textMensagem;
-    [SerializeField] private GameObject objUI;
+    //[SerializeField] private GameObject objUI;
     private bool dicionarioCarregado;
     public static SaveUIController InstanciaSaveUIController {
         get {
@@ -33,7 +33,7 @@ public class SaveUIController : MonoBehaviour
     void Start() {
         
         
-        objUI.SetActive(false);
+        //objUI.SetActive(false);
         IniciarUI();
         
     }
@@ -76,9 +76,9 @@ public class SaveUIController : MonoBehaviour
 
     private IEnumerator ExibirMensagemCoroutine() {
         textMensagem.text = stringsAtual[0].Item1;
-        objUI.SetActive(true);
+        //objUI.SetActive(true);
         yield return new WaitForSeconds(stringsAtual[0].Item2);
-        objUI.SetActive(false);
+        //objUI.SetActive(false);
         textMensagem.text = "";
         ApagarMensagem();
     }
