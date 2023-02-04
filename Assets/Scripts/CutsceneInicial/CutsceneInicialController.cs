@@ -51,7 +51,7 @@ public class CutsceneInicialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckSkipCutscene();
     }
     private IEnumerator CutsceneInicial() {
         yield return new WaitForSeconds(2f);
@@ -117,6 +117,12 @@ public class CutsceneInicialController : MonoBehaviour
     private void IniciarCoresImagens() {
         for(int i = 0;i < NUM_IMAGENS;i++) {
             imagensCutscene[i].color = new Color(1, 1, 1, 0);
+        }
+    }
+
+    private void CheckSkipCutscene() {
+        if(Input.GetButtonDown("Escape")) {
+            IniciarCenaFloresta();
         }
     }
 }
