@@ -14,6 +14,7 @@ public class LoadingController : MonoBehaviour
     {
         primeiroUpdate = true;
         VerificarSceneLoaderInstanciado();
+        PararMusica();
     }
 
     private void Update() {
@@ -69,5 +70,9 @@ public class LoadingController : MonoBehaviour
         } else {
             //Debug.Log("SceneData anteriormente criado");
         }
+    }
+
+    private void PararMusica() {
+        AudioManager.InstanciaAudioManager.StopMusicaAtual();
     }
 }

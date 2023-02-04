@@ -46,7 +46,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4501d104e3547294a96637cf79d38867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsLibrary: []
+  soundsLibrary:
+  - name: R.E.
+    clip: {fileID: 8300000, guid: 6313ccf6d07877249891be21928a7c0b, type: 3}
+    soundClip: {fileID: 0}
+    musica: 1
+    som: 0
+    volume: 1
+    pitch: 1
+    loop: 0
+    awake: 1
+    source: {fileID: 0}
+  - name: "Lenda do Esp\xEDrito"
+    clip: {fileID: 8300000, guid: c2389526cf4fe56479f3e696066ce520, type: 3}
+    soundClip: {fileID: 0}
+    musica: 1
+    som: 0
+    volume: 1
+    pitch: 1
+    loop: 1
+    awake: 1
+    source: {fileID: 0}
+  - name: Nami Budi
+    clip: {fileID: 8300000, guid: 05fc02f588a30f642ab62f024480a708, type: 3}
+    soundClip: {fileID: 0}
+    musica: 1
+    som: 0
+    volume: 1
+    pitch: 1
+    loop: 1
+    awake: 1
+    source: {fileID: 0}
+  - name: "Ritual de Reden\xE7\xE3o"
+    clip: {fileID: 8300000, guid: 1a0b4ae84f4894442aaf60eb51e296cf, type: 3}
+    soundClip: {fileID: 0}
+    musica: 1
+    som: 0
+    volume: 1
+    pitch: 1
+    loop: 1
+    awake: 1
+    source: {fileID: 0}
+  - name: Profanidade
+    clip: {fileID: 8300000, guid: 475309cd20df56a40980bf8317dfa569, type: 3}
+    soundClip: {fileID: 0}
+    musica: 1
+    som: 0
+    volume: 1
+    pitch: 1
+    loop: 1
+    awake: 1
+    source: {fileID: 0}
   musicasAudioMixerGroup: {fileID: -5956204415325992436, guid: 30755fad963294643860377d4450b14e, type: 2}
   sonsAudioMixerGroup: {fileID: -4032449555319584236, guid: 30755fad963294643860377d4450b14e, type: 2}
   vozesAudioMixerGroup: {fileID: -4161268270548589489, guid: 30755fad963294643860377d4450b14e, type: 2}

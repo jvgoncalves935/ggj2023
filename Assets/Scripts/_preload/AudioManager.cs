@@ -130,6 +130,10 @@ public class AudioManager : MonoBehaviour
         soundsLibrary[indice].source.Stop();
     }
 
+    public void StopMusicaAtual() {
+        soundsLibrary[indiceAtual].source.Stop();
+    }
+
     private void RegistrarMusica(AudioSource source){
         source.outputAudioMixerGroup = musicasAudioMixerGroup;
     }

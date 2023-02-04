@@ -33,6 +33,7 @@ public class RitualController : MonoBehaviour
     {
         VerificarSceneLoaderInstanciado();
         IniciarItensColetaveis();
+        MusicaInicio();
     }
 
     // Update is called once per frame
@@ -104,5 +105,9 @@ public class RitualController : MonoBehaviour
 
     public void SetText(string texto) {
         textoUI.text = texto;
+    }
+
+    public void MusicaInicio() {
+        AudioManager.InstanciaAudioManager.Play("Ritual de Redenção");
     }
 }

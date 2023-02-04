@@ -24,6 +24,7 @@ public class FlorestaController : MonoBehaviour
     void Start()
     {
         VerificarSceneLoaderInstanciado();
+        MusicaInicio();
     }
 
     // Update is called once per frame
@@ -41,5 +42,9 @@ public class FlorestaController : MonoBehaviour
         } else {
             //Debug.Log("SceneData anteriormente criado");
         }
+    }
+
+    public void MusicaInicio() {
+        AudioManager.InstanciaAudioManager.Play("Nami Budi");
     }
 }

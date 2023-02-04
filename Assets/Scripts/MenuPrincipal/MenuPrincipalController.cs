@@ -19,6 +19,7 @@ public class MenuPrincipalController : MonoBehaviour
         VerificarSceneLoaderInstanciado();
         IniciarListenersBotoes();
         DesfocarMouse();
+        MusicaInicio();
     }
 
     // Update is called once per frame
@@ -74,5 +75,9 @@ public class MenuPrincipalController : MonoBehaviour
 
     private void FecharJogo() {
         Application.Quit();
+    }
+
+    public void MusicaInicio() {
+        AudioManager.InstanciaAudioManager.Play("Profanidade");
     }
 }

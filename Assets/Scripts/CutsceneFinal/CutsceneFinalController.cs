@@ -25,6 +25,7 @@ public class CutsceneFinalController : MonoBehaviour
     {
         StartCoroutine(CutsceneFinal());
         VerificarSceneLoaderInstanciado();
+        MusicaInicio();
     }
 
     // Update is called once per frame
@@ -51,5 +52,9 @@ public class CutsceneFinalController : MonoBehaviour
         } else {
             //Debug.Log("SceneData anteriormente criado");
         }
+    }
+
+    public void MusicaInicio() {
+        AudioManager.InstanciaAudioManager.Play("Nami Budi");
     }
 }
