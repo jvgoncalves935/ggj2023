@@ -1,11 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CutsceneInicialController : MonoBehaviour
 {
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private TMP_Text textoUI;
+    private int indiceTextoAtual;
+    private static int NUM_IMAGENS = 10;
+
+    private string[] textosCutscenes = { "Maecenas sed ultricies sapien. Proin vitae libero vitae risus consectetur pellentesque. Sed ac nulla ut nisl cursus luctus a at massa. Curabitur pellentesque vel dolor.",
+                                         "Morbi commodo lacinia varius. Aenean ut ipsum lacus. Nunc fringilla a lacus vitae maximus. Etiam a ipsum ac mi laoreet.",
+                                         "Fusce faucibus nisi a tempor vulputate. Integer semper ut odio eu bibendum. Donec sit amet augue in ligula vehicula.",
+                                         "Sed lacus dui, commodo quis tincidunt eget, cursus efficitur dui. Suspendisse vitae finibus nisl. Vestibulum id ipsum et ex.",
+                                         "Sed at urna a leo interdum rhoncus a eu diam. Duis pulvinar sagittis est et finibus. Aenean.",
+                                         "Maecenas luctus justo nec enim dignissim, at congue diam pellentesque. Nulla non mattis diam. Cras ac.",
+                                         "Ut laoreet nunc eget accumsan ullamcorper. Nullam enim lorem, mattis at sodales ut, efficitur.",
+                                         "Fusce ac semper turpis, non dignissim arcu. Nullam porta nisl eu vehicula.",
+                                         "Maecenas nunc mi, vulputate vitae massa sit amet, tincidunt volutpat risus.",
+                                         "Vestibulum eu imperdiet mauris. Suspendisse convallis nisi sapien, sit amet."};
 
     [SerializeField] public static GameObject instanciaCutsceneInicialController;
     private static CutsceneInicialController _instanciaCutsceneInicialController;
@@ -23,6 +38,7 @@ public class CutsceneInicialController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        indiceTextoAtual = 0;
         StartCoroutine(CutsceneInicial());
         VerificarSceneLoaderInstanciado();
         MusicaInicio();
@@ -34,6 +50,12 @@ public class CutsceneInicialController : MonoBehaviour
         
     }
     private IEnumerator CutsceneInicial() {
+        yield return new WaitForSeconds(3f);
+
+        for(int i = 0;i < NUM_IMAGENS;i++) {
+
+        }
+
         yield return new WaitForSeconds(3f);
         IniciarCenaFloresta();
     }
@@ -56,5 +78,9 @@ public class CutsceneInicialController : MonoBehaviour
 
     public void MusicaInicio() {
         AudioManager.InstanciaAudioManager.Play("Lenda do Espírito");
+    }
+
+    public void SetText(string texto) {
+        textoUI.text = texto;
     }
 }
