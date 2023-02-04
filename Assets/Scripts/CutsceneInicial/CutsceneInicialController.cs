@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CutsceneInicialController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class CutsceneInicialController : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private TMP_Text textoUI;
     private int indiceTextoAtual;
+    [SerializeField] private Image[] imagensCutscene;
+
     private static int NUM_IMAGENS = 10;
 
     private string[] textosCutscenes = { "Maecenas sed ultricies sapien. Proin vitae libero vitae risus consectetur pellentesque. Sed ac nulla ut nisl cursus luctus a at massa. Curabitur pellentesque vel dolor.",
@@ -42,6 +45,7 @@ public class CutsceneInicialController : MonoBehaviour
         StartCoroutine(CutsceneInicial());
         VerificarSceneLoaderInstanciado();
         MusicaInicio();
+        IniciarCoresImagens();
     }
 
     // Update is called once per frame
@@ -50,10 +54,18 @@ public class CutsceneInicialController : MonoBehaviour
         
     }
     private IEnumerator CutsceneInicial() {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         for(int i = 0;i < NUM_IMAGENS;i++) {
-
+            
+            StartCoroutine(FadeIn(imagensCutscene[i], 0.6f));
+            yield return new WaitForSeconds(0.6f);
+            SetText(textosCutscenes[i]);
+            yield return new WaitForSeconds(3.5f);
+            StartCoroutine(FadeOut(imagensCutscene[i], 0.6f));
+            yield return new WaitForSeconds(0.6f);
+            SetText("");
+            yield return new WaitForSeconds(0.6f);
         }
 
         yield return new WaitForSeconds(3f);
@@ -82,5 +94,29 @@ public class CutsceneInicialController : MonoBehaviour
 
     public void SetText(string texto) {
         textoUI.text = texto;
+    }
+
+    private IEnumerator FadeIn(Image imagem, float tempoFinal) {
+        float tempo;
+        for(tempo = 0.0f;tempo <= tempoFinal;tempo += Time.deltaTime) {
+            imagem.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), tempo / tempoFinal);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        imagem.color = new Color(1, 1, 1, 1);
+    }
+
+    private IEnumerator FadeOut(Image imagem, float tempoFinal) {
+        float tempo;
+        for(tempo = tempoFinal;tempo >= 0.0f;tempo -= Time.deltaTime) {
+            imagem.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), tempo / tempoFinal);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        imagem.color = new Color(1, 1, 1, 0);
+    }
+
+    private void IniciarCoresImagens() {
+        for(int i = 0;i < NUM_IMAGENS;i++) {
+            imagensCutscene[i].color = new Color(1, 1, 1, 0);
+        }
     }
 }
