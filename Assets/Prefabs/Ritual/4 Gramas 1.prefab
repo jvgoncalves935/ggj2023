@@ -280,6 +280,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8117199412738458921}
     m_Modifications:
+    - target: {fileID: 4111559565989837906, guid: 2fc034b9cb7c3c34b848681511babd26, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c1b2ea428b7b8d4b9eff9c4c03133d7, type: 2}
     - target: {fileID: 5562176619133448815, guid: 2fc034b9cb7c3c34b848681511babd26, type: 3}
       propertyPath: m_Name
       value: Grama 1 anim
