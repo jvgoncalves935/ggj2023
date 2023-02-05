@@ -18,6 +18,7 @@ public class MenuPrincipalController : MonoBehaviour
     {
         VerificarSceneLoaderInstanciado();
         IniciarListenersBotoes();
+        //FocarMouse();
         DesfocarMouse();
         MusicaInicio();
     }
@@ -84,5 +85,11 @@ public class MenuPrincipalController : MonoBehaviour
 
     public void MusicaInicio() {
         AudioManager.InstanciaAudioManager.Play("Profanidade");
+    }
+
+    private void FocarMouse() {
+    #if UNITY_EDITOR || UNITY_STANDALONE_WIN
+            MouseOperations.FocarMouseMultiPlat();
+    #endif
     }
 }
