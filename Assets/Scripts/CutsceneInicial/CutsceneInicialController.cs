@@ -72,7 +72,7 @@ public class CutsceneInicialController : MonoBehaviour
         IniciarCenaFloresta();
     }
     private void IniciarCenaFloresta() {
-        SceneLoader.InstanciaSceneLoader.SetProximaCena("Floresta");
+        SceneLoader.InstanciaSceneLoader.SetProximaCena("Ritual");
         //Debug.Log(SceneLoader.InstanciaSceneLoader.GetProximaCena());
         GerenciadorCena.CarregarCena("Loading");
     }

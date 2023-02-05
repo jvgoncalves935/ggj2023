@@ -5,11 +5,12 @@ using UnityEngine;
 public class ImageCutscene : MonoBehaviour
 {
     public int id;
+    private bool ativado;
     [SerializeField] private string[] textosCutscenes;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ativado = true;
     }
 
     // Update is called once per frame
@@ -19,8 +20,9 @@ public class ImageCutscene : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(IsCorpoJogador(other)) {
-            ImageCutsceneUIController.InstanciaImageCutsceneUIController.CutsceneFinalCoroutine(textosCutscenes);
+        if(IsCorpoJogador(other) && ativado) {
+            ativado = false;
+            ImageCutsceneUIController.InstanciaImageCutsceneUIController.CutsceneCoroutine(textosCutscenes,id);
         }
     }
 
