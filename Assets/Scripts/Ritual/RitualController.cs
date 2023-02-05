@@ -110,6 +110,6 @@ public class RitualController : MonoBehaviour
     }
 
     public void MusicaInicio() {
-        AudioManager.InstanciaAudioManager.Play("Ritual de Redenção");
+        AudioManager.InstanciaAudioManager.Play("Nami Budi");
     }
 }
