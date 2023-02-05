@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1.71
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.17328227, g: 0.43566278, b: 0.5188679, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: ca0e74b026687f741b2401d0b326e620, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 35364c4f07a8c774c819c2e7322a94f8, type: 2}
   m_HaloStrength: 0.232
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.236
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00063455134, g: 0.0006402621, b: 0.0006646756, a: 0.236}
+  m_IndirectSpecularColor: {r: 0.00062772393, g: 0.00063488213, b: 0.0006577318, a: 0.236}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1222,7 +1222,7 @@ Transform:
   m_Children:
   - {fileID: 858851351}
   m_Father: {fileID: 1420187897}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -180, y: 169.753, z: 0}
 --- !u!23 &795440727
 MeshRenderer:
@@ -2095,12 +2095,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1600692142}
+  - {fileID: 795440726}
   - {fileID: 1345654988}
   - {fileID: 506290257}
   - {fileID: 1321213872}
   - {fileID: 1761417104}
   - {fileID: 299807370}
-  - {fileID: 795440726}
   m_Father: {fileID: 1925400825}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2240,7 +2240,7 @@ TerrainCollider:
   m_GameObject: {fileID: 1459602073}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: afc628bee80a59f4c939dbfc0546cdda, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 9dae9be2a26a69a4ab81249b30bcf086, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1459602076
 Terrain:
@@ -2251,7 +2251,7 @@ Terrain:
   m_GameObject: {fileID: 1459602073}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: afc628bee80a59f4c939dbfc0546cdda, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 9dae9be2a26a69a4ab81249b30bcf086, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
