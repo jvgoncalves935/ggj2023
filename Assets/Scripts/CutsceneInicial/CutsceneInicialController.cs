@@ -14,16 +14,16 @@ public class CutsceneInicialController : MonoBehaviour
 
     private static int NUM_IMAGENS = 10;
 
-    private string[] textosCutscenes = { "Maecenas sed ultricies sapien. Proin vitae libero vitae risus consectetur pellentesque. Sed ac nulla ut nisl cursus luctus a at massa. Curabitur pellentesque vel dolor.",
-                                         "Morbi commodo lacinia varius. Aenean ut ipsum lacus. Nunc fringilla a lacus vitae maximus. Etiam a ipsum ac mi laoreet.",
-                                         "Fusce faucibus nisi a tempor vulputate. Integer semper ut odio eu bibendum. Donec sit amet augue in ligula vehicula.",
-                                         "Sed lacus dui, commodo quis tincidunt eget, cursus efficitur dui. Suspendisse vitae finibus nisl. Vestibulum id ipsum et ex.",
-                                         "Sed at urna a leo interdum rhoncus a eu diam. Duis pulvinar sagittis est et finibus. Aenean.",
-                                         "Maecenas luctus justo nec enim dignissim, at congue diam pellentesque. Nulla non mattis diam. Cras ac.",
-                                         "Ut laoreet nunc eget accumsan ullamcorper. Nullam enim lorem, mattis at sodales ut, efficitur.",
-                                         "Fusce ac semper turpis, non dignissim arcu. Nullam porta nisl eu vehicula.",
-                                         "Maecenas nunc mi, vulputate vitae massa sit amet, tincidunt volutpat risus.",
-                                         "Vestibulum eu imperdiet mauris. Suspendisse convallis nisi sapien, sit amet."};
+    private string[] textosCutscenes = { "[Mayah]\n\"Esta é uma noite muito especial. A lua está no auge, é o dia exato para conectar o mundo físico com o espiritual. Prestar os devidos respeitos aos nossos ancestrais e prestar nossa oferenda para o guardião da floresta.\"",
+                                         "[Mara]\n\"Mas Vovó, por que tem um monstro desenhado junto com os nossos ancestrais?\"\"",
+                                         "[Mayah]\n\"Cuidado menina! Quer que a aldeia seja arrasada por uma maldição?!\"\"",
+                                         "[Mayah]\n\"Acalme-se, criança. Não tem porque se desesperar. Desde que você respeite a floresta e seus antepassados o espírito será sempre seu protetor.\"",
+                                         "[Mara]\n\"Vovó... porque a floresta precisa de um guardião? São todos tão fortes, além disso o papai é super forte! Vai derrotar qualquer um que nos ameaçar.\"",
+                                         "[Mayah]\n\"Você ainda é muito jovem para entender, mas os homens brancos têm monstros enormes que destroem a floresta como se fosse uma lufada de vento nas planícies.\"",
+                                         "[Manuel]\n\"Que merda de sonho bizarro… mas que velha maldita. Vão se fuder você, sua neta e seu cachorro bombado do caralho.\"",
+                                         "[Manuel]\n\"O que aqueles animais colocaram na minha bebida? Tô me sentindo meio chapado.\"",
+                                         "[Manuel]\n\"Pelo menos a gente botou os bichos do mato pra correr.\"",
+                                         "[Manuel]\n\"Ainda falaram que haviam indias lindas para se divertir... Enfim, vamos ver o que eu acho por aqui.\""};
 
     [SerializeField] public static GameObject instanciaCutsceneInicialController;
     private static CutsceneInicialController _instanciaCutsceneInicialController;
@@ -57,11 +57,14 @@ public class CutsceneInicialController : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         for(int i = 0;i < NUM_IMAGENS;i++) {
-            
+            if(i == 6) {
+                yield return new WaitForSeconds(2f);
+            }
+
             StartCoroutine(FadeIn(imagensCutscene[i], 0.6f));
             yield return new WaitForSeconds(0.6f);
             SetText(textosCutscenes[i]);
-            yield return new WaitForSeconds(3.5f);
+            yield return new WaitForSeconds(4.0f);
             StartCoroutine(FadeOut(imagensCutscene[i], 0.6f));
             yield return new WaitForSeconds(0.6f);
             SetText("");
@@ -72,7 +75,7 @@ public class CutsceneInicialController : MonoBehaviour
         IniciarCenaFloresta();
     }
     private void IniciarCenaFloresta() {
-        SceneLoader.InstanciaSceneLoader.SetProximaCena("Floresta");
+        SceneLoader.InstanciaSceneLoader.SetProximaCena("Ritual");
         //Debug.Log(SceneLoader.InstanciaSceneLoader.GetProximaCena());
         GerenciadorCena.CarregarCena("Loading");
     }

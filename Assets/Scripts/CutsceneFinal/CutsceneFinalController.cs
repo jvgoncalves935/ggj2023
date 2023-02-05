@@ -12,11 +12,11 @@ public class CutsceneFinalController : MonoBehaviour
     [SerializeField] private Image[] imagensCutscene;
     [SerializeField] private TMP_Text textoUI;
 
-    private string[] textosCutscenes = { "Maecenas sed ultricies sapien. Proin vitae libero vitae risus consectetur pellentesque. Sed ac nulla ut nisl cursus luctus a at massa. Curabitur pellentesque vel dolor.",
-                                         "Morbi commodo lacinia varius. Aenean ut ipsum lacus. Nunc fringilla a lacus vitae maximus. Etiam a ipsum ac mi laoreet.",
-                                         "Fusce faucibus nisi a tempor vulputate. Integer semper ut odio eu bibendum. Donec sit amet augue in ligula vehicula.",
-                                         "Sed lacus dui, commodo quis tincidunt eget, cursus efficitur dui. Suspendisse vitae finibus nisl. Vestibulum id ipsum et ex.",
-                                         "Sed at urna a leo interdum rhoncus a eu diam. Duis pulvinar sagittis est et finibus. Aenean."};
+    private string[] textosCutscenes = { "[Tokonimé]\n:\"Seu sacrifício foi recebido! Porém, o sangue ofertado não condiz com o sangue derramado.\"",
+                                         "[Manuel]\n:\"Como assim? Eu fiz tudo que me pediu no ritual. Até fiquei ouvindo aquela velha rabugenta falando na minha cabeça.\"",
+                                         "[Tokonimé]\n:\"Sua alma ficará presa na floresta até que você descubra suas raízes e pague sua dívida com sangue.\"",
+                                         "[Manuel]\n:\"Aaarrrghhh!\"",
+                                         "[Indígenas]\n:\"Levem ele.\""};
 
     [SerializeField] public static GameObject instanciaCutsceneFinalController;
     private static CutsceneFinalController _instanciaCutsceneFinalController;

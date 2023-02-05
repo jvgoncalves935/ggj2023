@@ -22,10 +22,14 @@ public class ImageCutsceneUIController : MonoBehaviour
         }
     }
 
+    void Awake() {
+        instanciaImageCutsceneUIController = FindObjectOfType<ImageCutsceneUIController>().gameObject;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        IniciarImagens();
     }
 
     // Update is called once per frame
@@ -34,20 +38,26 @@ public class ImageCutsceneUIController : MonoBehaviour
         
     }
 
-    public void CutsceneFinalCoroutine(string[] textos) {
-        StartCoroutine(CutsceneFinal(textos));
+    public void CutsceneCoroutine(string[] textos, int id) {
+        imagemUI = imagensCutscene[id];
+        textosCutscene = textos;
+        StartCoroutine(CutsceneImagem(textos));
     }
 
-    private IEnumerator CutsceneFinal(string[] textos) {
-        textosCutscene = textos;
+    private IEnumerator CutsceneImagem(string[] textos) {
+        //textosCutscene = textos;
         
         StartCoroutine(FadeIn(imagemUI, 0.6f));
         yield return new WaitForSeconds(0.6f);
-        for(int i = 0;i < textosCutscene.Length;i++) {
+        
 
-            SetText(textosCutscene[i]);
-            yield return new WaitForSeconds(3.0f);
-        }
+        SetText(textosCutscene[0]);
+        yield return new WaitForSeconds(3.5f);
+
+        SetText(textosCutscene[1]);
+        yield return new WaitForSeconds(2.7f);
+
+        SetText("");
         StartCoroutine(FadeOut(imagemUI, 0.6f));
         yield return new WaitForSeconds(0.6f);
     }
@@ -72,6 +82,12 @@ public class ImageCutsceneUIController : MonoBehaviour
 
     public void SetText(string texto) {
         textoUI.text = texto;
+    }
+
+    private void IniciarImagens() {
+        for(int i = 0;i < imagensCutscene.Count;i++) {
+            imagensCutscene[i].color = new Color(1, 1, 1, 0);
+        }
     }
 
 }
