@@ -54,10 +54,10 @@ public class ImageCutsceneUIController : MonoBehaviour
         
 
         SetText(textosCutscene[0]);
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(7.0f);
 
         SetText(textosCutscene[1]);
-        yield return new WaitForSeconds(3.7f);
+        yield return new WaitForSeconds(5.7f);
 
         SetText("");
         StartCoroutine(FadeOut(imagemUI, 0.6f));
