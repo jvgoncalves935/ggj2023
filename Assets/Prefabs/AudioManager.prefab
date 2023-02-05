@@ -98,7 +98,7 @@ MonoBehaviour:
     awake: 1
     source: {fileID: 0}
   - name: R.E. (Full)
-    clip: {fileID: 8300000, guid: cfd465b885713444c890805f06c284f8, type: 3}
+    clip: {fileID: 8300000, guid: 6ee0bbc6f2b94ba43918aeea575bcf93, type: 3}
     soundClip: {fileID: 0}
     musica: 1
     som: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
     awake: 1
     source: {fileID: 0}
   - name: Dori
-    clip: {fileID: 8300000, guid: 819546ffe5276ad49a174e877a6526ba, type: 3}
+    clip: {fileID: 8300000, guid: a00cf77b2b3b2404b88e9bb75e1284fa, type: 3}
     soundClip: {fileID: 0}
     musica: 1
     som: 0
