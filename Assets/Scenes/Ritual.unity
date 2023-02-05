@@ -6377,6 +6377,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8300000, guid: a00cf77b2b3b2404b88e9bb75e1284fa, type: 3}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: textosCutscenes.Array.data[0]
       value: "[Mayah]: \"A natureza \xE9 uma s\xF3. Tudo se conecta de uma forma
         ou de outra. Para redimir uma vida tirada, outra deve ser dada.\""
@@ -14291,6 +14295,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8300000, guid: a00cf77b2b3b2404b88e9bb75e1284fa, type: 3}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: textosCutscenes.Array.data[0]
       value: "[Mara]: \"O Guardi\xE3o defende a gente dos homens brancos? Haha, voc\xEAs
         ir\xE3o morrer se vierem atr\xE1s do nosso povo!\""
@@ -17631,7 +17639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &669090105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40238,6 +40246,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8300000, guid: a00cf77b2b3b2404b88e9bb75e1284fa, type: 3}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: textosCutscenes.Array.data[0]
       value: "[Mayah]: \"Quando o Esp\xEDrito marca sua presa nada pode impedi-lo.\""
       objectReference: {fileID: 0}
@@ -46551,6 +46563,10 @@ PrefabInstance:
       value: 0.19296265
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8300000, guid: a00cf77b2b3b2404b88e9bb75e1284fa, type: 3}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: textosCutscenes.Array.data[0]
       value: "[Mayah]: \"Tokonim\xE9 guarda a floresta desde os tempos ancestrais.
         Todos os inimigos da natureza s\xE3o tamb\xE9m seus inimigos. Da mesma forma,
@@ -50697,6 +50713,10 @@ PrefabInstance:
       propertyPath: id
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8300000, guid: a00cf77b2b3b2404b88e9bb75e1284fa, type: 3}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: textosCutscenes.Array.data[0]
       value: "[Mayah]: \"Segundo nossas tradi\xE7\xF5es, os cr\xE2nios dos xam\xE3s
