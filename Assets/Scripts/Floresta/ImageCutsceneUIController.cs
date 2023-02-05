@@ -10,6 +10,7 @@ public class ImageCutsceneUIController : MonoBehaviour
     [SerializeField] private List<Image> imagensCutscene;
     [SerializeField] private TMP_Text textoUI;
     private string[] textosCutscene;
+    private AudioSource audioSourceSons;
 
     [SerializeField] public static GameObject instanciaImageCutsceneUIController;
     private static ImageCutsceneUIController _instanciaImageCutsceneUIController;
@@ -30,6 +31,7 @@ public class ImageCutsceneUIController : MonoBehaviour
     void Start()
     {
         IniciarImagens();
+        audioSourceSons = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -88,6 +90,12 @@ public class ImageCutsceneUIController : MonoBehaviour
         for(int i = 0;i < imagensCutscene.Count;i++) {
             imagensCutscene[i].color = new Color(1, 1, 1, 0);
         }
+    }
+
+    public void PlayAudio(AudioClip audio) {
+        audioSourceSons.clip = audio;
+        audioSourceSons.loop = false;
+        audioSourceSons.Play();
     }
 
 }
