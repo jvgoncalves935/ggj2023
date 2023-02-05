@@ -14,7 +14,7 @@ public class CutsceneFinalController : MonoBehaviour
 
     private string[] textosCutscenes = { "[Tokonimé]\n:\"Seu sacrifício foi recebido! Porém, o sangue ofertado não condiz com o sangue derramado.\"",
                                          "[Manuel]\n:\"Como assim? Eu fiz tudo que me pediu no ritual. Até fiquei ouvindo aquela velha rabugenta falando na minha cabeça.\"",
-                                         "[Tokonimé]\n:\"Sua alma ficará presa na floresta até que você descubra suas raízes e pague sua dívida com sangue.\"",
+                                         "[Tokonimé]\n:\"Sua alma ficará presa na floresta até que você descubra suas raízes e pague sua dívida com sangue. Seus atos profanos serão punidos.\"",
                                          "[Manuel]\n:\"Aaarrrghhh!\"",
                                          "[Indígenas]\n:\"Levem ele.\""};
 

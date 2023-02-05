@@ -26,9 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ritual.unity
     guid: f5a11c1b2bce392438a168ed9f4578aa
-  - enabled: 1
-    path: Assets/Scenes/Creditos.unity
-    guid: ecbe861abcc76b3458b832c646fe22e4
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/TelaInicial.unity
     guid: 617c3dd5ba18090429d19ffe98b522f0
