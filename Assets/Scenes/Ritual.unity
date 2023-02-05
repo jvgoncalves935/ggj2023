@@ -1925,7 +1925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 316fa019ac13da247bdcb33517b7e879, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2bad7e93e90800499ee208337cd1cc2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16529,7 +16529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 316fa019ac13da247bdcb33517b7e879, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ba99798bf83dc04188bfb961ec366c5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23242,6 +23242,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 87.689
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e151251590d1d674fb153e5cb385d00d, type: 2}
     - target: {fileID: 919132149155446097, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
       propertyPath: m_Name
       value: Pedra Decall (1)
@@ -23528,7 +23532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 316fa019ac13da247bdcb33517b7e879, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cccf983fc16f1e641b52fb43192b8a01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29349,7 +29353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 316fa019ac13da247bdcb33517b7e879, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c9150823120dc44cac03667f37c71a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36159,6 +36163,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6642956971a82b4fae76ebdabb8db08, type: 2}
     - target: {fileID: 919132149155446097, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
       propertyPath: m_Name
       value: Pedra Decall (1)
@@ -47187,6 +47195,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c47e3d5d3a075ee47ba6d9902f63628a, type: 2}
     - target: {fileID: 919132149155446097, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
       propertyPath: m_Name
       value: Pedra Decall (2)
@@ -48185,6 +48197,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b19103b88bb51f4ebe3f57a8f8d47bd, type: 2}
     - target: {fileID: 919132149155446097, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
       propertyPath: m_Name
       value: Pedra Decall (2)
@@ -49696,6 +49712,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1eae5f08e515bb044a26f0b6634152bf, type: 2}
     - target: {fileID: 919132149155446097, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
       propertyPath: m_Name
       value: Pedra Decall (1)
@@ -51700,7 +51720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 316fa019ac13da247bdcb33517b7e879, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ffcf4f54bf60724b8e269ecde40b962, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -51777,6 +51797,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2c8c555e449f4f44bf86e49eb051369, type: 2}
     - target: {fileID: 919132149155446097, guid: 69184c7da5a6dfc40a6018efb20fc830, type: 3}
       propertyPath: m_Name
       value: Pedra Decall
