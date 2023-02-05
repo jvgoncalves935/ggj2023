@@ -49719,7 +49719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: textosCutscenes.Array.data[1]
-      value: "[Manuel]: \"Acho melhor contratar um seguran\xE7a mais competente.\""
+      value: "[Manuel]: \"HAHA! Acho melhor contratar um seguran\xE7a mais competente.\""
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803327, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_RootOrder
@@ -54218,9 +54218,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: textosCutscenes.Array.data[0]
-      value: "[Mayah]: \"Segundo nossas tradi\xE7\xF5es, o cr\xE2nio carrega a energia
-        dos grandes espiritualistas de nossa tribo. Esses itens s\xE3o a maior conex\xE3o
-        entre o atual e o ancestral.\""
+      value: "[Mayah]: \"Segundo nossas tradi\xE7\xF5es, os cr\xE2nios dos xam\xE3s
+        espirituais carregam a energia dos grandes espiritualistas de nossa tribo.
+        Esses itens s\xE3o a maior conex\xE3o entre o atual e o ancestral.\""
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: textosCutscenes.Array.data[1]
