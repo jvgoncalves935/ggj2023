@@ -20,8 +20,6 @@ Ignore Blender backups
 
 *.blend1
 
-*.meta
-
 *.dwlt
 
 Assets/AssetStoreTools*
