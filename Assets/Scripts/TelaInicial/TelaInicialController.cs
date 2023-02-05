@@ -25,7 +25,7 @@ public class TelaInicialController : MonoBehaviour{
     void Start()
     {
         VerificarScenesDataInstanciado();
-        FocarMouse();
+        //FocarMouse();
         VerificarVideoPreload();
         MusicaInicio();
     }
