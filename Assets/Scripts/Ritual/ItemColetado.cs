@@ -9,6 +9,7 @@ public class ItemColetado : MonoBehaviour
     [SerializeField] private bool posicionado;
     [SerializeField] private GameObject item;
     private bool isCorpoJogador;
+    public AudioClip audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +70,11 @@ public class ItemColetado : MonoBehaviour
     private void GetUseButton() {
         if(Input.GetButtonDown("Use") && coletado && !posicionado && isCorpoJogador) {
             SetItemPosicionado();
+            TocarAudio();
         }
+    }
+
+    private void TocarAudio() {
+        ImageCutsceneUIController.InstanciaImageCutsceneUIController.PlayAudio(audio);
     }
 }
