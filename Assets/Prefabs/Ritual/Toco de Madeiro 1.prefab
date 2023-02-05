@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5382759378727948164}
   - component: {fileID: 9015288050643910689}
   - component: {fileID: 6555072813615854827}
+  - component: {fileID: 5024865168424734467}
   m_Layer: 0
   m_Name: Toco de Madeiro 1
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5024865168424734467
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753751228591838526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4089097843288561674, guid: b39e7c53bbfcbbd459e7ac14f6a897d1, type: 3}
