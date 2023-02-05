@@ -64,7 +64,7 @@ public class CutsceneInicialController : MonoBehaviour
             StartCoroutine(FadeIn(imagensCutscene[i], 0.6f));
             yield return new WaitForSeconds(0.6f);
             SetText(textosCutscenes[i]);
-            yield return new WaitForSeconds(4.4f);
+            yield return new WaitForSeconds(5.0f);
             StartCoroutine(FadeOut(imagensCutscene[i], 0.6f));
             yield return new WaitForSeconds(0.6f);
             SetText("");
