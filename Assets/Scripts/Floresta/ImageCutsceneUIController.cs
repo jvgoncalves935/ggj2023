@@ -10,7 +10,7 @@ public class ImageCutsceneUIController : MonoBehaviour
     [SerializeField] private List<Image> imagensCutscene;
     [SerializeField] private TMP_Text textoUI;
     private string[] textosCutscene;
-    private AudioSource audioSourceSons;
+    public AudioSource audioSourceSons;
 
     [SerializeField] public static GameObject instanciaImageCutsceneUIController;
     private static ImageCutsceneUIController _instanciaImageCutsceneUIController;
