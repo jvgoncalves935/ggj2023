@@ -1352,11 +1352,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8216368209565803296, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_Name
-      value: ImageCutscene (4)
+      value: ImageCutscenePorco
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: id
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[0]
+      value: "[Mayah]: \"A natureza \xE9 uma s\xF3. Tudo se conecta de uma forma
+        ou de outra. Para redimir uma vida tirada, outra deve ser dada.\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[1]
+      value: "[Manuel]: \"Hahaha! O que \xE9 isso? Um esquilo bombado?\""
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803327, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_RootOrder
@@ -3797,11 +3806,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8216368209565803296, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_Name
-      value: ImageCutscene (1)
+      value: "ImageCutsceneEsp\xEDrito02"
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: id
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[0]
+      value: "[Mara]: \"O Guardi\xE3o defende a gente dos homens brancos? Haha, voc\xEAs
+        ir\xE3o morrer se vierem atr\xE1s do nosso povo!\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[1]
+      value: '[Manuel]: "Quem matou quem mesmo? Aprenda o seu lugar, sua pirralha
+        boca suja."'
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803327, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_RootOrder
@@ -7318,11 +7337,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8216368209565803296, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_Name
-      value: ImageCutscene (5)
+      value: ImageCutsceneOferendaSangue
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: id
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[0]
+      value: "[Mayah]: \"A oferenda de sangue faz parte do Ritual de Reden\xE7\xE3o.
+        Todos os descendentes da floresta s\xE3o julgados por Tokonim\xE9 e s\xE3o
+        determinados como dignos ou n\xE3o-dignos.\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[1]
+      value: "[Mara]: \"Ent\xE3o \xE9 por isso que a gente n\xE3o usa os sangues
+        dos porcos?\""
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803327, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_RootOrder
@@ -10614,11 +10644,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8216368209565803296, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_Name
-      value: ImageCutscene (2)
+      value: "ImageCutsceneEsp\xEDrito03"
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: id
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[0]
+      value: "[Mayah]: \"Quando o Esp\xEDrito marca sua presa nada pode impedi-lo.\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[1]
+      value: "[Manuel: \"T\xE1 bom, t\xE1 come\xE7ando a perder a gra\xE7a. Eu acho
+        que eu realmente estou ficando louco.\""
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803327, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_RootOrder
@@ -12529,7 +12568,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8216368209565803296, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_Name
-      value: ImageCutscene
+      value: "ImageCutsceneEsp\xEDrito01"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[0]
+      value: "[Mayah]: \"Tokonim\xE9 guarda a floresta desde os tempos ancestrais.
+        Todos os inimigos da natureza s\xE3o tamb\xE9m seus inimigos. Da mesma forma,
+        ele tamb\xE9m defende os amigos da floresta.\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[1]
+      value: "[Manuel]: \"Acho melhor contratar um seguran\xE7a mais competente.\""
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803327, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_RootOrder
@@ -13690,11 +13739,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8216368209565803296, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_Name
-      value: ImageCutscene (3)
+      value: ImageCutsceneCranio
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: id
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[0]
+      value: "[Mayah]: \"Segundo nossas tradi\xE7\xF5es, o cr\xE2nio carrega a energia
+        dos grandes espiritualistas de nossa tribo. Esses itens s\xE3o a maior conex\xE3o
+        entre o atual e o ancestral.\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216368209565803326, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
+      propertyPath: textosCutscenes.Array.data[1]
+      value: "[Manuel]: \"Eca, que nojo! Se \xE9 pra revirar lixo eu prefiro pegar
+        um cad\xE1ver das covas coletivas!\""
       objectReference: {fileID: 0}
     - target: {fileID: 8216368209565803327, guid: 1268155af3e546e4d9c946434c74dc94, type: 3}
       propertyPath: m_RootOrder
