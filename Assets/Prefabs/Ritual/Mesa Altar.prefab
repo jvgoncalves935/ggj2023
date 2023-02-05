@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 6499834622672327931}
   - component: {fileID: 6499834622672327925}
   - component: {fileID: 6499834622672327930}
+  - component: {fileID: 1695446983367654294}
   m_Layer: 0
   m_Name: Mesa Altar
   m_TagString: Untagged
@@ -200,6 +201,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1695446983367654294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499834622672327928}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.035070617, y: 0.007863163, z: 0.016628204}
+  m_Center: {x: -0.000050227227, y: 0.0026074864, z: -0.00013630828}
 --- !u!1 &6499834623210734703
 GameObject:
   m_ObjectHideFlags: 0
