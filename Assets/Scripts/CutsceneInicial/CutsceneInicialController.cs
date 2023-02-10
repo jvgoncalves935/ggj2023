@@ -16,7 +16,7 @@ public class CutsceneInicialController : MonoBehaviour
 
     private string[] textosCutscenes = { "[Mayah]\n\"Esta é uma noite muito especial. A lua está no auge, é o dia exato para conectar o mundo físico com o espiritual. Prestar os devidos respeitos aos nossos ancestrais e prestar nossa oferenda para o guardião da floresta.\"",
                                          "[Mara]\n\"Mas Vovó, por que tem um monstro desenhado junto com os nossos ancestrais?\"",
-                                         "[Mayah]\n\"Cuidado menina! Quer que a aldeia seja arrasada por uma maldição?!\"\"",
+                                         "[Mayah]\n\"Cuidado menina! Quer que a aldeia seja arrasada por uma maldição?!\"",
                                          "[Mayah]\n\"Acalme-se, criança. Não tem porque se desesperar. Desde que você respeite a floresta e seus antepassados o espírito será sempre seu protetor.\"",
                                          "[Mara]\n\"Vovó... porque a floresta precisa de um guardião? São todos tão fortes, além disso o papai é super forte! Vai derrotar qualquer um que nos ameaçar.\"",
                                          "[Mayah]\n\"Você ainda é muito jovem para entender, mas os homens brancos têm monstros enormes que destroem a floresta como se fosse uma lufada de vento nas planícies.\"",
