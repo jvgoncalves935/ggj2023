@@ -12,6 +12,9 @@ public class ImageCutsceneUIController : MonoBehaviour
     private string[] textosCutscene;
     public AudioSource audioSourceSons;
 
+    private Dictionary<string, string> stringsRitual;
+    private Dictionary<string, string> stringsPersonagensRitual;
+
     [SerializeField] public static GameObject instanciaImageCutsceneUIController;
     private static ImageCutsceneUIController _instanciaImageCutsceneUIController;
     public static ImageCutsceneUIController InstanciaImageCutsceneUIController {
@@ -25,6 +28,7 @@ public class ImageCutsceneUIController : MonoBehaviour
 
     void Awake() {
         instanciaImageCutsceneUIController = FindObjectOfType<ImageCutsceneUIController>().gameObject;
+        CarregarStrings();
     }
 
     // Start is called before the first frame update
@@ -96,6 +100,18 @@ public class ImageCutsceneUIController : MonoBehaviour
         audioSourceSons.clip = audio;
         audioSourceSons.loop = false;
         audioSourceSons.Play();
+    }
+
+    private void CarregarStrings() {
+        LocalizationSystem.GetDicionarioStringsFullCena("Ritual", out stringsRitual, out stringsPersonagensRitual);
+    }
+
+    public Dictionary<string,string> GetDicionarioStrings() {
+        return stringsRitual;
+    }
+
+    public Dictionary<string, string> GetDicionarioStringsPersonagens() {
+        return stringsPersonagensRitual;
     }
 
 }

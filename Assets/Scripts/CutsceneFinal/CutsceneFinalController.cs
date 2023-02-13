@@ -12,6 +12,9 @@ public class CutsceneFinalController : MonoBehaviour
     [SerializeField] private Image[] imagensCutscene;
     [SerializeField] private TMP_Text textoUI;
 
+    private Dictionary<string, string> stringsCutsceneFinal;
+    private Dictionary<string, string> stringsPersonagensCutsceneFinal;
+
     private string[] textosCutscenes = { "[Tokonimé]\n\"Seu sacrifício foi recebido! Porém, o sangue ofertado não condiz com o sangue derramado.\"",
                                          "[Manuel]\n\"Como assim? Eu fiz tudo que me pediu no ritual. Até fiquei ouvindo aquela velha rabugenta falando na minha cabeça.\"",
                                          "[Tokonimé]\n\"Sua alma ficará presa na floresta até que você descubra suas raízes e pague sua dívida com sangue. Seus atos profanos serão punidos.\"",
@@ -39,6 +42,8 @@ public class CutsceneFinalController : MonoBehaviour
         StartCoroutine(CutsceneFinal());
         MusicaInicio();
         IniciarCoresImagens();
+        CarregarStrings();
+        AplicarStrings();
     }
 
     // Update is called once per frame
@@ -116,6 +121,17 @@ public class CutsceneFinalController : MonoBehaviour
     private void CheckSkipCutscene() {
         if(Input.GetButtonDown("Escape")) {
             IniciarCenaCreditos();
+        }
+    }
+
+    private void CarregarStrings() {
+        LocalizationSystem.GetDicionarioStringsFullCena("CutsceneFinal", out stringsCutsceneFinal, out stringsPersonagensCutsceneFinal);
+    }
+
+    private void AplicarStrings() {
+        textosCutscenes = new string[5];
+        for(int i = 0;i < 5;i++) {
+            textosCutscenes[i] = "[" + stringsPersonagensCutsceneFinal["FINAL_" + i] + "]" + "\n" + stringsCutsceneFinal["FINAL_" + i];
         }
     }
 }

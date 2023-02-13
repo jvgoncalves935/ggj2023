@@ -12,6 +12,7 @@ public class ImageCutscene : MonoBehaviour
     void Start()
     {
         ativado = true;
+        AplicarStrings();
     }
 
     // Update is called once per frame
@@ -38,5 +39,16 @@ public class ImageCutscene : MonoBehaviour
     private void TocarAudio() {
         ImageCutsceneUIController.InstanciaImageCutsceneUIController.PlayAudio(audio);
     }
-    
+
+    private void AplicarStrings() {
+        
+
+        textosCutscenes = new string[2];
+        for(int i = 0;i < 2;i++) {
+            string nome = ImageCutsceneUIController.InstanciaImageCutsceneUIController.GetDicionarioStringsPersonagens()["RITUAL_" + id + "_" + i];
+            string texto = ImageCutsceneUIController.InstanciaImageCutsceneUIController.GetDicionarioStrings()["RITUAL_" + id + "_" + i];
+            textosCutscenes[i] = "[" + nome + "]" + "\n" + texto;
+        }
+    }
+
 }

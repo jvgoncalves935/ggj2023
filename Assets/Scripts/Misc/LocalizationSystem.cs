@@ -7,6 +7,7 @@ using System.Xml;
 public class LocalizationSystem{
     private static LocalizationSystem _instancia;
     private static Dictionary<string,string> stringsCenaAtual;
+    private static Dictionary<string, string> stringsPersonagensCenaAtual;
     private static Dictionary<int,string> linguagens = new Dictionary<int, string>{
         {0,"pt_BR"},
         {1,"en_US"}
@@ -42,6 +43,7 @@ public class LocalizationSystem{
 
     public static void IniciarDicionario(){
         stringsCenaAtual = new Dictionary<string, string>();
+        stringsPersonagensCenaAtual = new Dictionary<string, string>();
     }
 
     public static void ParserXMLStringsLinguagem(string idLinguagem, string cenaAtual){
@@ -53,13 +55,26 @@ public class LocalizationSystem{
         foreach (XElement textx in languageXMLData.Element("Linguagem").Elements()){
             string chave = textx.Attribute("key").Value;
             string valor = textx.Element("translated").Value;
+            XElement personagemX = textx.Element("char");
+            string personagem =  (personagemX == null) ? "" : personagemX.Value;
             //Debug.Log(chave+" "+valor);
             AdicionarStringDicionario(chave,valor);
+            AdicionarStringPersonagemDicionario(chave, personagem);
         }
     }
 
     public static void AdicionarStringDicionario(string chave, string valor){
         stringsCenaAtual.Add(chave, valor);
+    }
+
+    public static void AdicionarStringPersonagemDicionario(string chave, string valor) {
+        stringsPersonagensCenaAtual.Add(chave, valor);
+    }
+
+    public static void IniciarInstanciaDictSaveData() {
+        ApagarDicionario();
+        GetInstance();
+        SaveData saveData = SaveSystem.CarregarData();
     }
 
     public static string GetString(string chave, string cena){
@@ -69,26 +84,62 @@ public class LocalizationSystem{
         return stringsCenaAtual[chave];
     }
 
-    public static Dictionary<string,string> GetDicionarioStringsCena(string cena){
-        ApagarDicionario();
+    public static string GetPersonagemString(string chave, string cena) {
         GetInstance();
+        SaveData saveData = SaveSystem.CarregarData();
+        InstanciarDicionario(cena, saveData.Linguagem);
+        return stringsPersonagensCenaAtual[chave];
+    }
+
+    public static Dictionary<string,string> GetDicionarioStringsCena(string cena){
+        IniciarInstanciaDictSaveData();
         InstanciarDicionario(cena, GetLinguagem());
         return stringsCenaAtual;
     }
 
+    public static Dictionary<string, string> GetDicionarioStringsPersonagensCena(string cena) {
+        IniciarInstanciaDictSaveData();
+        InstanciarDicionario(cena, GetLinguagem());
+        return stringsPersonagensCenaAtual;
+    }
+
     public static Dictionary<string, string> GetDicionarioStringsCena(string cena, string linguagem) {
-        ApagarDicionario();
-        GetInstance();
+        IniciarInstanciaDictSaveData();
         InstanciarDicionario(cena, linguagem);
         return stringsCenaAtual;
     }
 
+    public static Dictionary<string, string> GetDicionarioStringsPersonagensCena(string cena, string linguagem) {
+        IniciarInstanciaDictSaveData();
+        InstanciarDicionario(cena, linguagem);
+        return stringsPersonagensCenaAtual;
+    }
+
+    public static void GetDicionarioStringsFullCena(string cena, out Dictionary<string,string> dictStrings, out Dictionary<string, string> dictPersonagens) {
+        dictStrings = GetDicionarioStringsCena(cena);
+        dictPersonagens = GetDicionarioStringsPersonagensCena(cena);
+    }
+
+    public static void GetDicionarioStringsFullCena(string cena, string linguagem, out Dictionary<string, string> dictStrings, out Dictionary<string, string> dictPersonagens) {
+        dictStrings = GetDicionarioStringsCena(cena,linguagem);
+        dictPersonagens = GetDicionarioStringsPersonagensCena(cena,linguagem);
+    }
+
     public static Dictionary<string, string> GetDicionarioStringsCenaCommon(string cena) {
-        ApagarDicionario();
-        GetInstance();
-        SaveData saveData = SaveSystem.CarregarData();
+        IniciarInstanciaDictSaveData();
         InstanciarDicionario(cena, "common");
         return stringsCenaAtual;
+    }
+
+    public static Dictionary<string, string> GetDicionarioStringsPersonagemCenaCommon(string cena) {
+        IniciarInstanciaDictSaveData();
+        InstanciarDicionario(cena, "common");
+        return stringsPersonagensCenaAtual;
+    }
+
+    public static void GetDicionarioStringsFullCenaCommon(string cena, out Dictionary<string, string> dictStrings, out Dictionary<string, string> dictPersonagens) {
+        dictStrings = GetDicionarioStringsCenaCommon(cena);
+        dictPersonagens = GetDicionarioStringsPersonagemCenaCommon(cena);
     }
 
     public static void InstanciarDicionario(string cena, string linguagem){
@@ -99,6 +150,7 @@ public class LocalizationSystem{
 
     public static void ApagarDicionario(){
         stringsCenaAtual = null;
+        stringsPersonagensCenaAtual = null;
     }
 
     public static bool IsDicionarioIniciado(){

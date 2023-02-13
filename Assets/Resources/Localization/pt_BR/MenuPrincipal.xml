@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<Linguagem ID="pt_BR">
+
+    <string key="MENU_IDIOMA">
+		<original>Idioma:</original>
+        <translated>Idioma:</translated>
+    </string>
+
+    <string key="MENU_VOLTAR">
+		<original>Voltar</original>
+        <translated>Voltar</translated>
+    </string>
+
+</Linguagem>

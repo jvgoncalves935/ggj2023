@@ -12,6 +12,9 @@ public class CutsceneInicialController : MonoBehaviour
     private int indiceTextoAtual;
     [SerializeField] private Image[] imagensCutscene;
 
+    private Dictionary<string, string> stringsCutsceneInicial;
+    private Dictionary<string, string> stringsPersonagensCutsceneInicial;
+
     private static int NUM_IMAGENS = 10;
 
     private string[] textosCutscenes = { "[Mayah]\n\"Esta é uma noite muito especial. A lua está no auge, é o dia exato para conectar o mundo físico com o espiritual. Prestar os devidos respeitos aos nossos ancestrais e prestar nossa oferenda para o guardião da floresta.\"",
@@ -46,6 +49,8 @@ public class CutsceneInicialController : MonoBehaviour
         VerificarSceneLoaderInstanciado();
         MusicaInicio();
         IniciarCoresImagens();
+        CarregarStrings();
+        AplicarStrings();
     }
 
     // Update is called once per frame
@@ -126,6 +131,17 @@ public class CutsceneInicialController : MonoBehaviour
     private void CheckSkipCutscene() {
         if(Input.GetButtonDown("Escape")) {
             IniciarCenaFloresta();
+        }
+    }
+
+    private void CarregarStrings() {
+        LocalizationSystem.GetDicionarioStringsFullCena("CutsceneInicial", out stringsCutsceneInicial, out stringsPersonagensCutsceneInicial);
+    }
+
+    private void AplicarStrings() {
+        textosCutscenes = new string[10];
+        for(int i = 0;i < 10;i++) {
+            textosCutscenes[i] = "[" + stringsPersonagensCutsceneInicial["INICIAL_" + i] + "]" + "\n" + stringsCutsceneInicial["INICIAL_" + i];
         }
     }
 }
