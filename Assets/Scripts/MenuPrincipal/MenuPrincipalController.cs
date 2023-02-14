@@ -15,8 +15,8 @@ public class MenuPrincipalController : MonoBehaviour
     [Header("Botões Menu Opções")]
     [SerializeField] private Button botaoMenor;
     [SerializeField] private Button botaoMaior;
-    [SerializeField] private TMP_Text textoIdioma;
-    [SerializeField] private TMP_Text textoIdiomaSelect;
+    [SerializeField] private TMP_Text textLinguagens;
+    [SerializeField] private TMP_Text textLinguagensSelect;
     [SerializeField] private TMP_Text textoVoltar;
     [SerializeField] private Button botaoVoltar;
 
@@ -24,9 +24,20 @@ public class MenuPrincipalController : MonoBehaviour
     [SerializeField] private GameObject menuPrincipalObj;
     [SerializeField] private GameObject menuOpcoesObj;
 
+    [Header("Linguagens")]
+    private string[] linguagensSiglas;
+    private string linguagemAtual;
+    private int linguagemAtualIndice;
+    private int numLinguagens;
+    private Dictionary<int, string> linguagens;
+    private SaveData saveData;
+
     [Header("Outros")]
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private SaveUIController saveUIController;
+
+
 
     private Dictionary<string, string> stringsOpcoes;
 
@@ -39,8 +50,7 @@ public class MenuPrincipalController : MonoBehaviour
         DesfocarMouse();
         MusicaInicio();
 
-        CarregarStrings();
-        CarregarStringsLinguagens();
+        IniciarStrings();
 
         AtivarMenuPrincipal();
     }
@@ -49,6 +59,14 @@ public class MenuPrincipalController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void IniciarStrings() {
+        CarregarSaveOpcoes();
+        CarregarStrings();
+        CarregarStringsLinguagens();
+        CarregarLinguagemAtual();
+        IniciarStringsLinguagens();
     }
 
     private void OnButtonIniciarClick() {
@@ -68,15 +86,17 @@ public class MenuPrincipalController : MonoBehaviour
     }
 
     private void OnButtonVoltarOpcoesClick() {
+        FecharMenuOpcoes();
         AtivarMenuPrincipal();
     }
 
     private void OnButtonMaiorOpcoesClick() {
-        AtivarMenuOpcoes();
+        Debug.Log("1");
+        AtualizarLinguagem(1);
     }
 
     private void OnButtonMenorOpcoesClick() {
-        AtivarMenuOpcoes();
+        AtualizarLinguagem(-1);
     }
 
     private void DesfocarMouse() {
@@ -110,6 +130,7 @@ public class MenuPrincipalController : MonoBehaviour
         if(FindObjectOfType<SceneLoader>() == null) {
             Instantiate(sceneLoader);
             Instantiate(audioManager);
+            Instantiate(saveUIController);
             //DontDestroyOnLoad(sceneLoader);
             //Debug.Log("SceneData criado em EventHorizon");
         } else {
@@ -138,8 +159,16 @@ public class MenuPrincipalController : MonoBehaviour
     private void CarregarStringsLinguagens() {
         Dictionary<string, string> stringsLinguagens = LocalizationSystem.GetDicionarioStringsCenaCommon("MenuPrincipalCommon");
         foreach(KeyValuePair<string, string> entrada in stringsLinguagens) {
+            //Debug.Log(entrada.Key + " " + entrada.Value);
             stringsOpcoes.Add(entrada.Key, entrada.Value);
         }
+    }
+
+    private void IniciarStringsLinguagens() {
+        textLinguagens.text = stringsOpcoes["OPCOES_LINGUAGEM"];
+        textLinguagensSelect.text = stringsOpcoes["OPCOES_LINGUAGEM_" + linguagensSiglas[linguagemAtualIndice].ToUpper()];
+
+        textoVoltar.text = stringsOpcoes["MENU_VOLTAR"];
     }
 
     private void ToggleMenuPrincipal(bool flag) {
@@ -158,6 +187,72 @@ public class MenuPrincipalController : MonoBehaviour
     private void AtivarMenuOpcoes() {
         ToggleMenuPrincipal(false);
         ToggleMenuOpcoes(true);
+    }
+
+    public void AtualizarLinguagem(int add) {
+        int novaPosicao = AtualizarPosicaoLinguagem(add);
+        TrocarLinguagem(novaPosicao);
+        AlterarLinguagemSave();
+    }
+
+    private int AtualizarPosicaoLinguagem(int add) {
+        int novaPosicao = linguagemAtualIndice + add;
+        int posicaoFinal;
+        if(novaPosicao == -1) {
+            posicaoFinal = numLinguagens - 1;
+        } else {
+            if(novaPosicao == numLinguagens) {
+                posicaoFinal = 0;
+            } else {
+                posicaoFinal = novaPosicao;
+            }
+        }
+
+        return posicaoFinal;
+    }
+
+    private void CarregarLinguagemAtual() {
+        linguagens = LocalizationSystem.DicionarioLinguagens();
+        linguagemAtual = LocalizationSystem.LinguagemAtual();
+        numLinguagens = linguagens.Count;
+
+        linguagensSiglas = new string[numLinguagens];
+        foreach(KeyValuePair<int, string> kvp in linguagens) {
+            if(kvp.Value == linguagemAtual) {
+                linguagemAtualIndice = kvp.Key;
+            }
+            linguagensSiglas[kvp.Key] = kvp.Value;
+        }
+    }
+
+    private void TrocarLinguagem(int pos) {
+        linguagemAtualIndice = pos;
+        textLinguagensSelect.text = stringsOpcoes["OPCOES_LINGUAGEM_" + linguagensSiglas[linguagemAtualIndice].ToUpper()];
+        linguagemAtual = linguagensSiglas[linguagemAtualIndice];
+    }
+
+    public void CarregarSaveOpcoes() {
+        saveData = SaveSystem.CarregarData();
+        //Debug.Log(saveData.Linguagem);
+    }
+
+    private void AlterarLinguagemSave() {
+        saveData.Linguagem = linguagemAtual;
+        //Debug.Log(saveData.Linguagem);
+    }
+
+    private void SalvarSaveOpcoes() {
+        LocalizationSystem.SetLinguagem(linguagemAtual);
+        SaveUIController.InstanciaSaveUIController.ReiniciarDicionario(linguagemAtual);
+        SaveSystem.SalvarAlteraçõesSave(saveData, true);
+    }
+
+    public void FecharMenuOpcoes() {
+        SalvarSaveOpcoes();
+        IniciarStrings();
+
+        //Debug.Log(linguagemAtual);
+
     }
 
 }

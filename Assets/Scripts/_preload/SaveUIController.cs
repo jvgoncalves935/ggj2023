@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class SaveUIController : MonoBehaviour
 {
@@ -11,7 +11,8 @@ public class SaveUIController : MonoBehaviour
     private Dictionary<string, string> stringsSaveUI;
     private List<Tuple<string,float>> stringsAtual;
     private SaveData saveData;
-    [SerializeField] private Text textMensagem;
+    [SerializeField] private GameObject objUI;
+    [SerializeField] private TMP_Text textMensagem;
     //[SerializeField] private GameObject objUI;
     private bool dicionarioCarregado;
     public static SaveUIController InstanciaSaveUIController {
@@ -33,7 +34,7 @@ public class SaveUIController : MonoBehaviour
     void Start() {
         
         
-        //objUI.SetActive(false);
+        objUI.SetActive(false);
         IniciarUI();
         
     }

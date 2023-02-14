@@ -158,6 +158,7 @@ public class LocalizationSystem{
     }
 
     public static string ArquivoXMLString(string path){
+        //Debug.Log(path);
         TextAsset textAsset = (TextAsset) Resources.Load(path);  
         XmlDocument doc = new XmlDocument();
         doc.LoadXml(textAsset.text);

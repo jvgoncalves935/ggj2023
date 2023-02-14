@@ -73,4 +73,19 @@
         <translated>"So is that why we don't use the pigs' blood?"</translated>
     </string>
 
+    <string key="RITUAL_ITEM_NAO_COLETADO">
+        <original>Tokonimé aguarda sua oferenda.</original>
+        <translated>Tokonimé awaits your offering.</translated>
+    </string>
+
+    <string key="RITUAL_ITEM_OFERENDA">
+        <original>Aperte "F" para realizar sua oferenda.</original>
+        <translated>Press "F" to peform your offering.</translated>
+    </string>
+
+    <string key="RITUAL_ITEM_COLETAR">
+        <original>Aperte "F" para coletar a oferenda.</original>
+        <translated>Press "F" to collect your offering.</translated>
+    </string>
+
 </Linguagem>

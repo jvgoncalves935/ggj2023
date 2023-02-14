@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-16"?>
 <Linguagem ID="pt_BR">
 
-    <string key="MENU_IDIOMA">
+    <string key="OPCOES_LINGUAGEM">
 		<original>Idioma:</original>
         <translated>Idioma:</translated>
     </string>

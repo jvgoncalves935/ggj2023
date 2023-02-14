@@ -8,12 +8,15 @@ public class ItemColetável : MonoBehaviour
     [SerializeField] private bool coletado;
     [SerializeField] private GameObject item;
     private bool isCorpoJogador;
+    private string[] stringsHUD;
     public AudioClip audio;
+
 
     // Start is called before the first frame update
     void Start()
     {
         coletado = false;
+        IniciarStringsHUD();
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class ItemColetável : MonoBehaviour
         //Debug.Log(useButton + " " + isCorpoJogador);
         if(IsCorpoJogador(other)) {
             isCorpoJogador = true;
-            RitualController.InstanciaRitualController.SetText("Aperte \"F\" para coletar a oferenda.");
+            RitualController.InstanciaRitualController.SetText(stringsHUD[2]);
         }
     }
     private void OnTriggerStay(Collider other) {
@@ -64,5 +67,9 @@ public class ItemColetável : MonoBehaviour
 
     private void TocarAudio() {
         ImageCutsceneUIController.InstanciaImageCutsceneUIController.PlayAudio(audio);
+    }
+
+    private void IniciarStringsHUD() {
+        stringsHUD = ImageCutsceneUIController.InstanciaImageCutsceneUIController.GetStringsHUDRitual();
     }
 }

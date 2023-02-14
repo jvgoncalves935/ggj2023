@@ -1174,7 +1174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Idioma:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1573,14 +1573,15 @@ MonoBehaviour:
   botaoSair: {fileID: 523300718}
   botaoMenor: {fileID: 1902772876}
   botaoMaior: {fileID: 327453368}
-  textoIdioma: {fileID: 597995708}
-  textoIdiomaSelect: {fileID: 119889709}
+  textLinguagens: {fileID: 597995708}
+  textLinguagensSelect: {fileID: 119889709}
   textoVoltar: {fileID: 1722331899}
   botaoVoltar: {fileID: 1861472297}
   menuPrincipalObj: {fileID: 58291703}
   menuOpcoesObj: {fileID: 1196291909}
   sceneLoader: {fileID: 4151728016533399908, guid: a645c4c2c9835e7409d67498b5a0d261, type: 3}
   audioManager: {fileID: 9060284651338929096, guid: 9670f3ff600c54341a3cf8ccf73f3a48, type: 3}
+  saveUIController: {fileID: 321397705509680289, guid: 9434907532b004147a239c3e9abd7974, type: 3}
 --- !u!4 &1299693424
 Transform:
   m_ObjectHideFlags: 0
@@ -2008,7 +2009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Voltar
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

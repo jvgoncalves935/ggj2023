@@ -9,6 +9,7 @@ public class ItemColetado : MonoBehaviour
     [SerializeField] private bool posicionado;
     [SerializeField] private GameObject item;
     private bool isCorpoJogador;
+    private string[] stringsHUD;
     public AudioClip audio;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class ItemColetado : MonoBehaviour
         item.SetActive(false);
         coletado = false;
         posicionado = false;
+        IniciarStringsHUD();
     }
 
     // Update is called once per frame
@@ -27,10 +29,10 @@ public class ItemColetado : MonoBehaviour
         if(IsCorpoJogador(other)) {
             isCorpoJogador = true;
             if(!coletado) {
-                RitualController.InstanciaRitualController.SetText("Tokonimé aguarda sua oferenda.");
+                RitualController.InstanciaRitualController.SetText(stringsHUD[0]);
             } else {
                 if(!posicionado) {
-                    RitualController.InstanciaRitualController.SetText("Aperte \"F\" para realizar sua oferenda.");
+                    RitualController.InstanciaRitualController.SetText(stringsHUD[1]);
                 }
             }
         }
@@ -76,5 +78,9 @@ public class ItemColetado : MonoBehaviour
 
     private void TocarAudio() {
         ImageCutsceneUIController.InstanciaImageCutsceneUIController.PlayAudio(audio);
+    }
+
+    private void IniciarStringsHUD() {
+        stringsHUD = ImageCutsceneUIController.InstanciaImageCutsceneUIController.GetStringsHUDRitual();
     }
 }

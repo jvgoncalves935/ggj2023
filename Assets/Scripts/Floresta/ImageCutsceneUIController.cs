@@ -114,4 +114,11 @@ public class ImageCutsceneUIController : MonoBehaviour
         return stringsPersonagensRitual;
     }
 
+    public string[] GetStringsHUDRitual() {
+        return new string[]{ stringsRitual["RITUAL_ITEM_NAO_COLETADO"],
+                             stringsRitual["RITUAL_ITEM_OFERENDA"],
+                             stringsRitual["RITUAL_ITEM_COLETAR"]};
+
+    }
+
 }
