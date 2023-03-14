@@ -10,7 +10,7 @@ public class ImageCutsceneUIController : MonoBehaviour
     [SerializeField] private List<Image> imagensCutscene;
     [SerializeField] private TMP_Text textoUI;
     private string[] textosCutscene;
-    public AudioSource audioSourceSons;
+    private AudioSource audioSourceSons;
 
     private Dictionary<string, string> stringsRitual;
     private Dictionary<string, string> stringsPersonagensRitual;
@@ -29,6 +29,7 @@ public class ImageCutsceneUIController : MonoBehaviour
     void Awake() {
         instanciaImageCutsceneUIController = FindObjectOfType<ImageCutsceneUIController>().gameObject;
         CarregarStrings();
+        audioSourceSons = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -55,15 +56,22 @@ public class ImageCutsceneUIController : MonoBehaviour
         
         StartCoroutine(FadeIn(imagemUI, 0.6f));
         yield return new WaitForSeconds(0.6f);
+
+        Player.InstanciaPlayer.ToggleFirstPersonController(false);
         
 
         SetText(textosCutscene[0]);
-        yield return new WaitForSeconds(7.0f);
+        yield return StartCoroutine(SkippableCutscenes.InstanciaSkippableCutscenes.WaitForSecondsCancelavel(6.9f));
+        //yield return new WaitForSeconds(7.0f);
 
         SetText(textosCutscene[1]);
-        yield return new WaitForSeconds(5.7f);
+        yield return new WaitForSeconds(0.1f);
+
+        yield return StartCoroutine(SkippableCutscenes.InstanciaSkippableCutscenes.WaitForSecondsCancelavel(5.7f));
+        //yield return new WaitForSeconds(5.7f);
 
         SetText("");
+        Player.InstanciaPlayer.ToggleFirstPersonController(true);
         StartCoroutine(FadeOut(imagemUI, 0.6f));
         yield return new WaitForSeconds(0.6f);
     }
@@ -103,7 +111,7 @@ public class ImageCutsceneUIController : MonoBehaviour
     }
 
     private void CarregarStrings() {
-        LocalizationSystem.GetDicionarioStringsFullCena("Ritual", out stringsRitual, out stringsPersonagensRitual);
+        LocalizationSystem.GetDicionarioStringsFullCena(GerenciadorCena.NomeCenaAtual(), out stringsRitual, out stringsPersonagensRitual);
     }
 
     public Dictionary<string,string> GetDicionarioStrings() {

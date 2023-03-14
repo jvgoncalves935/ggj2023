@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1397622858710705390}
   - component: {fileID: 2651073169831881547}
   - component: {fileID: 229250688750002049}
+  - component: {fileID: 2447534775667576580}
   m_Layer: 0
   m_Name: Toco de Madeira 2
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2447534775667576580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742482084831346260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005127779, y: 0.005374452, z: 0.00458695}
+  m_Center: {x: 0.00022136151, y: 0.00023739159, z: 0.0013322693}

@@ -58,6 +58,7 @@ public class RitualController : MonoBehaviour
             //Debug.Log("SceneData criado em EventHorizon");
         } else {
             //Debug.Log("SceneData anteriormente criado");
+            
         }
     }
 

@@ -11,4 +11,24 @@
         <translated>Voltar</translated>
     </string>
 
+    <string key="MENU_INICIAR">
+		<original>Iniciar</original>
+        <translated>Iniciar</translated>
+    </string>
+
+    <string key="MENU_OPCOES">
+		<original>Opções</original>
+        <translated>Opções</translated>
+    </string>
+
+    <string key="MENU_CREDITOS">
+		<original>Créditos</original>
+        <translated>Créditos</translated>
+    </string>
+
+    <string key="MENU_FUGIR">
+		<original>Fugir</original>
+        <translated>Fugir</translated>
+    </string>
+
 </Linguagem>

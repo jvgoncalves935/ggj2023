@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4177677844061614599}
   - component: {fileID: 1032956299953896866}
   - component: {fileID: 3004247305224194408}
-  - component: {fileID: 4499288030362899950}
+  - component: {fileID: 5255003737080068998}
   m_Layer: 0
   m_Name: Pedra Grande (1)
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4499288030362899950
-MeshCollider:
+--- !u!65 &5255003737080068998
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1145058087227595171, guid: 132f0fbf6ab8c7147aeb913eef7c48e8, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.040026654, y: 0.035520744, z: 0.019699372}
+  m_Center: {x: 0.00023547746, y: 0.0001590438, z: -0.0025277068}

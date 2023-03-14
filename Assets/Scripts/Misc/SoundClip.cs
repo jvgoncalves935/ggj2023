@@ -4,10 +4,15 @@ public class SoundClip : MonoBehaviour
 {
     private int indice;
     public string nome;
+    private AudioSource audioSource;
     [SerializeField] private bool playOnStart;
     [SerializeField] public bool efeitoSonoro;
     [SerializeField] public bool wasPlaying;
     [SerializeField] public bool ignorarPause;
+
+    private void Awake() {
+        GetAudioSource();
+    }
 
     private void Start(){
         if(!efeitoSonoro) {
@@ -20,12 +25,22 @@ public class SoundClip : MonoBehaviour
         }
     }
 
+    private void GetAudioSource() {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void Play(){
-        AudioManager.InstanciaAudioManager.Play(nome);
+        audioSource.Play();
     }
 
     public void Stop(){
-        AudioManager.InstanciaAudioManager.Stop(nome);
+        audioSource.Stop();
+    }
+    public void Pause() {
+        audioSource.Pause();
+    }
+    public void UnPause() {
+        audioSource.UnPause();
     }
 
     public void SetWasPlaying(bool flag) {
@@ -34,6 +49,10 @@ public class SoundClip : MonoBehaviour
 
     public bool WasPlaying() {
         return wasPlaying;
+    }
+
+    public bool isPlaying() {
+        return audioSource.isPlaying;
     }
 
     public void SetIgnorarPause(bool flag) {

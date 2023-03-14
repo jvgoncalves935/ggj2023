@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -43,7 +44,24 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        IniciarSonsList();
+    }
+
+    void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    void OnDisable() {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        IniciarSonsList();
+    }
+    private void OnSceneUnloaded(Scene scene) {
+        LimparSonsList();
     }
 
     private void IniciarDictGlobal(){
@@ -205,7 +223,7 @@ public class AudioManager : MonoBehaviour
         foreach(SoundClip obj in objetosCena) {
             AdicionarSomList(obj.GetComponent<AudioSource>());
             AdicionarSoundClipList(obj);
-            Debug.Log("aaaaaaa " + obj.name);   
+            //Debug.Log("aaaaaaa " + obj.name);   
         }
     }
 
@@ -219,10 +237,10 @@ public class AudioManager : MonoBehaviour
 
     public void PausarSons() {
         int i = 0;
-        foreach(AudioSource audio in sonsList) {
-            if(audio.gameObject.activeInHierarchy && audio.isPlaying) {
-                soundClipList[i].SetWasPlaying(true);
-                audio.Pause();
+        foreach(SoundClip soundclip in soundClipList) {
+            if(soundclip.gameObject.activeInHierarchy && soundclip.isPlaying()) {
+                soundclip.SetWasPlaying(true);
+                soundclip.Pause();
             }
             i++;
         }
@@ -230,12 +248,17 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySons() {
         int i = 0;
-        foreach(AudioSource audio in sonsList) {
-            if(audio.gameObject.activeInHierarchy && soundClipList[i].WasPlaying() && !soundClipList[i].IsIgnorarPause()) {
-                audio.Play();
+        foreach(SoundClip soundClip in soundClipList) {
+            if(soundClip.gameObject.activeInHierarchy && soundClip.WasPlaying() && !soundClip.IsIgnorarPause()){
+                soundClip.UnPause();
             }
             i++;
         }
+    }
+
+    public void LimparSonsList() {
+        sonsList = new List<AudioSource>();
+        soundClipList = new List<SoundClip>();
     }
 
 }

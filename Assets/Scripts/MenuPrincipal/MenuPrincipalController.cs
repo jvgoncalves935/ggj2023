@@ -11,6 +11,10 @@ public class MenuPrincipalController : MonoBehaviour
     [SerializeField] private Button botaoOpcoes;
     [SerializeField] private Button botaoCreditos;
     [SerializeField] private Button botaoSair;
+    [SerializeField] private TMP_Text textoIniciar;
+    [SerializeField] private TMP_Text textoOpcoes;
+    [SerializeField] private TMP_Text textoCreditos;
+    [SerializeField] private TMP_Text textoFugir;
 
     [Header("Botões Menu Opções")]
     [SerializeField] private Button botaoMenor;
@@ -91,7 +95,6 @@ public class MenuPrincipalController : MonoBehaviour
     }
 
     private void OnButtonMaiorOpcoesClick() {
-        Debug.Log("1");
         AtualizarLinguagem(1);
     }
 
@@ -153,11 +156,11 @@ public class MenuPrincipalController : MonoBehaviour
     }
 
     private void CarregarStrings() {
-        stringsOpcoes = LocalizationSystem.GetDicionarioStringsCena("MenuPrincipal");
+        stringsOpcoes = LocalizationSystem.GetDicionarioStringsCena(GerenciadorCena.NomeCenaAtual());
     }
 
     private void CarregarStringsLinguagens() {
-        Dictionary<string, string> stringsLinguagens = LocalizationSystem.GetDicionarioStringsCenaCommon("MenuPrincipalCommon");
+        Dictionary<string, string> stringsLinguagens = LocalizationSystem.GetDicionarioStringsCenaCommon(GerenciadorCena.NomeCenaAtual()+"Common");
         foreach(KeyValuePair<string, string> entrada in stringsLinguagens) {
             //Debug.Log(entrada.Key + " " + entrada.Value);
             stringsOpcoes.Add(entrada.Key, entrada.Value);
@@ -169,14 +172,20 @@ public class MenuPrincipalController : MonoBehaviour
         textLinguagensSelect.text = stringsOpcoes["OPCOES_LINGUAGEM_" + linguagensSiglas[linguagemAtualIndice].ToUpper()];
 
         textoVoltar.text = stringsOpcoes["MENU_VOLTAR"];
+        textoIniciar.text = stringsOpcoes["MENU_INICIAR"];
+        textoOpcoes.text = stringsOpcoes["MENU_OPCOES"];
+        textoCreditos.text = stringsOpcoes["MENU_CREDITOS"];
+        textoFugir.text = stringsOpcoes["MENU_FUGIR"];
     }
 
     private void ToggleMenuPrincipal(bool flag) {
         menuPrincipalObj.SetActive(flag);
+        ResetarBotaoSelecionado();
     }
 
     private void ToggleMenuOpcoes(bool flag) {
         menuOpcoesObj.SetActive(flag);
+        ResetarBotaoSelecionado();
     }
 
     private void AtivarMenuPrincipal() {
@@ -252,7 +261,10 @@ public class MenuPrincipalController : MonoBehaviour
         IniciarStrings();
 
         //Debug.Log(linguagemAtual);
+    }
 
+    private void ResetarBotaoSelecionado() {
+        BotaoController.InstanciaBotaoController.DeselecionarBotaoMouseEnter();
     }
 
 }

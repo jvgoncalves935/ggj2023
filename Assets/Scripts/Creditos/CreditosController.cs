@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CreditosController : MonoBehaviour
 {
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private Button botaoSair;
+
+    [SerializeField] private TMP_Text[] textosUI;
+    [SerializeField] private TMP_Text textoFugir;
+
+    private Dictionary<string, string> stringsCreditos;
+    private Dictionary<string, string> stringsPersonagensCreditos;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +23,9 @@ public class CreditosController : MonoBehaviour
         botaoSair.onClick.AddListener(OnButtonSairClick);
         DesfocarMouse();
         MusicaInicio();
+        CarregarStrings();
+        CarregarStringsCommon();
+        AplicarStrings();
     }
 
     // Update is called once per frame
@@ -48,6 +58,28 @@ public class CreditosController : MonoBehaviour
     #if UNITY_EDITOR || UNITY_STANDALONE_WIN
         MouseOperations.DestravarCursorMultiPlat();
     #endif
+    }
+
+    private void CarregarStrings() {
+        LocalizationSystem.GetDicionarioStringsFullCena(GerenciadorCena.NomeCenaAtual(), out stringsCreditos, out stringsPersonagensCreditos);
+    }
+
+    private void CarregarStringsCommon() {
+        Dictionary<string, string> stringsLinguagens = LocalizationSystem.GetDicionarioStringsCenaCommon(GerenciadorCena.NomeCenaAtual() + "Common");
+        foreach(KeyValuePair<string, string> entrada in stringsLinguagens) {
+            //Debug.Log(entrada.Key + " " + entrada.Value);
+            stringsCreditos.Add(entrada.Key, entrada.Value);
+        }
+    }
+
+    private void AplicarStrings() {
+        
+        for(int i = 0;i < 6;i++) {
+            textosUI[i*2].text = stringsCreditos["CREDITOS_" + i];
+            textosUI[i*2+1].text = stringsCreditos["CREDITOS_COMMON_" + i];
+        }
+
+        textoFugir.text = stringsCreditos["CREDITOS_FUGIR"];
     }
 
 

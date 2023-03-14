@@ -17,16 +17,7 @@ public class CutsceneInicialController : MonoBehaviour
 
     private static int NUM_IMAGENS = 10;
 
-    private string[] textosCutscenes = { "[Mayah]\n\"Esta é uma noite muito especial. A lua está no auge, é o dia exato para conectar o mundo físico com o espiritual. Prestar os devidos respeitos aos nossos ancestrais e prestar nossa oferenda para o guardião da floresta.\"",
-                                         "[Mara]\n\"Mas Vovó, por que tem um monstro desenhado junto com os nossos ancestrais?\"",
-                                         "[Mayah]\n\"Cuidado menina! Quer que a aldeia seja arrasada por uma maldição?!\"",
-                                         "[Mayah]\n\"Acalme-se, criança. Não tem porque se desesperar. Desde que você respeite a floresta e seus antepassados o espírito será sempre seu protetor.\"",
-                                         "[Mara]\n\"Vovó... porque a floresta precisa de um guardião? São todos tão fortes, além disso o papai é super forte! Vai derrotar qualquer um que nos ameaçar.\"",
-                                         "[Mayah]\n\"Você ainda é muito jovem para entender, mas os homens brancos têm monstros enormes que destroem a floresta como se fosse uma lufada de vento nas planícies.\"",
-                                         "[Manuel]\n\"Que merda de sonho bizarro… mas que velha maldita. Vão se fuder você, sua neta e seu cachorro bombado do caralho.\"",
-                                         "[Manuel]\n\"O que aqueles animais colocaram na minha bebida? Tô me sentindo meio chapado.\"",
-                                         "[Manuel]\n\"Pelo menos a gente botou os macacos pelados pra correr.\"",
-                                         "[Manuel]\n\"Droga! Falaram que haviam índias lindas para se divertir... Enfim, vamos ver o que eu acho por aqui.\""};
+    private string[] textosCutscenes;
 
     [SerializeField] public static GameObject instanciaCutsceneInicialController;
     private static CutsceneInicialController _instanciaCutsceneInicialController;
@@ -69,7 +60,10 @@ public class CutsceneInicialController : MonoBehaviour
             StartCoroutine(FadeIn(imagensCutscene[i], 0.6f));
             yield return new WaitForSeconds(0.6f);
             SetText(textosCutscenes[i]);
-            yield return new WaitForSeconds(7.0f);
+
+            yield return StartCoroutine(SkippableCutscenes.InstanciaSkippableCutscenes.WaitForSecondsCancelavel(6.9f));
+            yield return new WaitForSeconds(0.1f);
+
             StartCoroutine(FadeOut(imagensCutscene[i], 0.6f));
             yield return new WaitForSeconds(0.6f);
             SetText("");
@@ -135,7 +129,7 @@ public class CutsceneInicialController : MonoBehaviour
     }
 
     private void CarregarStrings() {
-        LocalizationSystem.GetDicionarioStringsFullCena("CutsceneInicial", out stringsCutsceneInicial, out stringsPersonagensCutsceneInicial);
+        LocalizationSystem.GetDicionarioStringsFullCena(GerenciadorCena.NomeCenaAtual(), out stringsCutsceneInicial, out stringsPersonagensCutsceneInicial);
     }
 
     private void AplicarStrings() {

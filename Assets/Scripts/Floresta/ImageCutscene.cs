@@ -8,10 +8,12 @@ public class ImageCutscene : MonoBehaviour
     private bool ativado;
     public AudioClip audio;
     [SerializeField] private string[] textosCutscenes;
+    private LuzPulsando luz;
     // Start is called before the first frame update
     void Start()
     {
         ativado = true;
+        luz = GetComponent<LuzPulsando>();
         AplicarStrings();
     }
 
@@ -24,6 +26,7 @@ public class ImageCutscene : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(IsCorpoJogador(other) && ativado) {
             ativado = false;
+            luz.PararLuz();
             ImageCutsceneUIController.InstanciaImageCutsceneUIController.CutsceneCoroutine(textosCutscenes,id);
             TocarAudio();
         }
