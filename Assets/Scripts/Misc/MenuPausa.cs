@@ -29,17 +29,10 @@ public class MenuPausa : MonoBehaviour
     [SerializeField] private Image imagemCamadaPretaFadeOut;
 
 	private float corPretaTelaPausa = 220.0f/256.0f;
-	private Text textoBriefing;
 	private Dictionary<string,string> stringsMenuPausa;
     private Dictionary<string, string> stringsPersonagensPausa;
     
 	private Text textoSelecionado;
-    private bool briefingAutorizado;
-
-    private RectTransform botaoMenuPrincipalRect;
-    private RectTransform botaoReiniciarRect;
-    private RectTransform botaoContinuarRect;
-    private RectTransform botaoObjetivosRect;
 
 
     [SerializeField] public static GameObject instanciaMenuPausa;
@@ -57,10 +50,6 @@ public class MenuPausa : MonoBehaviour
     }
 
 	void Start () {
-
-        briefingAutorizado = false;
-		larguraTela = Screen.width;
-		alturaTela = Screen.height;
 		
 		imagemCamadaPreta = camadaPreta.GetComponent<Image>();
 
@@ -99,6 +88,7 @@ public class MenuPausa : MonoBehaviour
         TravarCursor();
         AudioManager.InstanciaAudioManager.DespausarMusicaMenuPausa();
         AudioManager.InstanciaAudioManager.PlaySons();
+        BotaoController.InstanciaBotaoController.DeselecionarBotaoMouseEnter();
     }
 
 	public void TravarCursor(){

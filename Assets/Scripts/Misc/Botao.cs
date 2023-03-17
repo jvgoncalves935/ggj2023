@@ -5,7 +5,7 @@ using TMPro;
 
 public class Botao : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private TMP_Text texto;
+    private TMP_Text texto;
     [SerializeField] private bool ativado;
     public Button botaoOriginal{get;set;}
     

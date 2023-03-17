@@ -40,6 +40,7 @@ public class MenuPrincipalController : MonoBehaviour
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SaveUIController saveUIController;
+    [SerializeField] private TMP_Text textoVersao;
 
 
 
@@ -71,6 +72,7 @@ public class MenuPrincipalController : MonoBehaviour
         CarregarStringsLinguagens();
         CarregarLinguagemAtual();
         IniciarStringsLinguagens();
+        textoVersao.text = "v"+Application.version;
     }
 
     private void OnButtonIniciarClick() {
